@@ -2,9 +2,14 @@
   text-align: center;
 }
 
-.App-logo {
+h1, h2, p {
+  margin: 0;
+}
+
+.profile-img {
   height: 40vmin;
   pointer-events: none;
+  border-radius: 40vmin;
 }
 
 @media (prefers-reduced-motion: no-preference) {
