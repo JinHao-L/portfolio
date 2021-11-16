@@ -5,9 +5,10 @@ import { createPopper } from '@popperjs/core';
 export interface HoverIconProps {
   name: string;
   Icon: IconType;
+  color?: string;
 }
 
-const HoverIcon: React.FC<HoverIconProps> = ({ name, Icon }) => {
+const HoverIcon: React.FC<HoverIconProps> = ({ name, Icon, color }) => {
   const [tooltipShow, setTooltipShow] = React.useState(false);
   const btnRef = React.createRef<HTMLButtonElement>();
   const tooltipRef = React.createRef<HTMLDivElement>();
@@ -29,7 +30,7 @@ const HoverIcon: React.FC<HoverIconProps> = ({ name, Icon }) => {
         onMouseLeave={closeLeftTooltip}
         ref={btnRef}
       >
-        <Icon className="w-16 h-16 px-2 mb-2" />
+        <Icon className="w-16 h-16 px-2 mb-2" color={color || 'white'}/>
       </button>
 
       <div

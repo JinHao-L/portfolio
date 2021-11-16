@@ -5,31 +5,32 @@ import SubSectionHeader from 'components/SubSectionHeader';
 import React from 'react';
 import Section, { SectionProps } from '../components/Section';
 import {
-  DiJavascript1,
-  DiReact,
-  DiNodejs,
-  DiMongodb,
-  DiPython,
-  DiGit,
-  DiVim,
-  DiVisualstudio,
-  DiLinux,
-  DiJava,
-  DiPostgresql,
-  DiIonic,
-} from 'react-icons/di';
-import {
-  SiAmazonaws,
-  SiApachekafka,
-  SiDocker,
-  SiExpress,
-  SiGradle,
-  SiKubernetes,
-  SiNestjs,
-  SiPostman,
-  SiTypescript,
-  SiWebpack,
-} from 'react-icons/si';
+  AWS_ICON,
+  DOCKER_ICON,
+  EXPRESS_ICON,
+  FIGMA_ICON,
+  FIREBASE_ICON,
+  GIT_ICON,
+  GRADLE_ICON,
+  IONIC_ICON,
+  JAVASCRIPT_ICON,
+  JAVA_ICON,
+  JUPYTER_ICON,
+  K8S_ICON,
+  KAFKA_ICON,
+  LINUX_ICON,
+  MONGO_ICON,
+  NEST_ICON,
+  NODE_ICON,
+  POSTGRES_ICON,
+  POSTMAN_ICON,
+  PYTHON_ICON,
+  REACT_ICON,
+  TYPESCRIPT_ICON,
+  VIM_ICON,
+  VSCODE_ICON,
+  WEBPACK_ICON,
+} from 'components/TechIcons';
 
 const About: React.FC<SectionProps> = ({ id, style, className }) => {
   const DESCRIPTION =
@@ -43,34 +44,37 @@ const About: React.FC<SectionProps> = ({ id, style, className }) => {
     'The list below are some of the skillsets that I have gained through projects that I have done in my academic, internship or in my own free time.';
 
   const PROFICIENT = [
-    { Icon: SiTypescript, name: 'Typescript' },
-    { Icon: DiJavascript1, name: 'Javascript' },
-    { Icon: DiReact, name: 'React (JS & Native)' },
-    { Icon: DiPython, name: 'Python' },
-    { Icon: SiNestjs, name: 'NestJS' },
-    { Icon: DiPostgresql, name: 'PostgreSQL' },
-    { Icon: DiNodejs, name: 'NodeJS' },
+    TYPESCRIPT_ICON,
+    JAVASCRIPT_ICON,
+    REACT_ICON,
+    PYTHON_ICON,
+    NEST_ICON,
+    POSTGRES_ICON,
+    NODE_ICON,
   ];
 
   const DABBLED = [
-    { Icon: DiJava, name: 'Java' },
-    { Icon: SiGradle, name: 'Gradle' },
-    { Icon: SiExpress, name: 'ExpressJS' },
-    { Icon: SiApachekafka, name: 'Apache Kafka' },
-    { Icon: SiKubernetes, name: 'Kubernetes' },
-    { Icon: SiAmazonaws, name: 'AWS Services' },
-    { Icon: DiMongodb, name: 'MongoDB' },
-    { Icon: DiIonic, name: 'Ionic' },
-    { Icon: SiWebpack, name: 'Webpack' },
+    JAVA_ICON,
+    GRADLE_ICON,
+    EXPRESS_ICON,
+    KAFKA_ICON,
+    K8S_ICON,
+    AWS_ICON,
+    MONGO_ICON,
+    IONIC_ICON,
+    WEBPACK_ICON,
   ];
 
   const TOOLS = [
-    { Icon: DiVim, name: 'Vim' },
-    { Icon: DiGit, name: 'Git' },
-    { Icon: DiVisualstudio, name: 'VS Code' },
-    { Icon: SiDocker, name: 'Docker' },
-    { Icon: DiLinux, name: 'Linux (Ubuntu)' },
-    { Icon: SiPostman, name: 'Postman' },
+    VIM_ICON,
+    GIT_ICON,
+    VSCODE_ICON,
+    DOCKER_ICON,
+    LINUX_ICON,
+    POSTMAN_ICON,
+    FIREBASE_ICON,
+    JUPYTER_ICON,
+    FIGMA_ICON,
   ];
 
   return (
