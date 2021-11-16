@@ -3,10 +3,22 @@ import React from 'react';
 import Section, { SectionProps } from '../components/Section';
 import { MdWork, MdSchool, MdStar, MdRadio } from 'react-icons/md';
 
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+  VerticalTimelineElementProps,
+} from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-const experiencesData = [
+interface ExperienceDataProps {
+  props: VerticalTimelineElementProps;
+  title: string;
+  subtitle: string;
+  content: string[];
+  links?: { url: string; name: string }[];
+}
+
+const experiencesData: ExperienceDataProps[] = [
   {
     props: {
       date: 'Jan 2021 – Current',
@@ -22,6 +34,12 @@ const experiencesData = [
     content: [
       'Collaborated with a team of 8 developers to maintain and improve open-source software which is used to coordinate and teach students Software Engineering Principle in CS2103',
       'Conducted and coordinated code and design documentation reviews for features developed and bugs fixed',
+    ],
+    links: [
+      {
+        name: 'SE-EDU Team',
+        url: 'https://se-education.org/docs/team.html',
+      },
     ],
   },
   {
@@ -40,6 +58,16 @@ const experiencesData = [
       'Collaborated with a team of 5 developers to maintain and improve 2 mobile applications built using React Native',
       'Led the project of building BOLT-X Chrome Extension, a cryptocurrency wallet with over 300+ active users, and successfully implemented a working MVP within 2 months',
       'Actively communicated with external organisations, Switcheo co-founder and tech team, to discuss integration of Switcheo network and Zilswap webapp with BOLT-X Extension',
+    ],
+    links: [
+      {
+        name: 'BOLT Global',
+        url: 'https://bolt.global/',
+      },
+      {
+        name: 'BOLT-X Extension',
+        url: 'https://chrome.google.com/webstore/detail/bolt-x/aodkkagnadcbobfpggfnjeongemjbjca',
+      },
     ],
   },
   {
@@ -82,8 +110,7 @@ const Experiences: React.FC<SectionProps> = ({ id, style, className }) => {
   return (
     <Section id={id} style={style} className={className}>
       <SectionHeader>My Experiences</SectionHeader>
-      <div className="text-white"/>
-      <VerticalTimeline animate lineColor={'gray'}>
+      <VerticalTimeline animate>
         {experiencesData.map((item) => (
           <VerticalTimelineElement {...item.props}>
             <h3 className="font-semibold text-md vertical-timeline-element-title">{item.title}</h3>
@@ -95,6 +122,18 @@ const Experiences: React.FC<SectionProps> = ({ id, style, className }) => {
                 ))}
               </ul>
             </p>
+
+            <div className="pt-4">
+              {item.links?.map((link, j) => (
+                <a key={j} target="_blank" href={link.url} rel="noreferrer">
+                  <button
+                    className="px-4 py-2 mx-3 font-normal text-white bg-transparent border border-white rounded hover:bg-blue-500 hover:text-white hover:border-transparent"
+                  >
+                    {link.name}
+                  </button>
+                </a>
+              ))}
+            </div>
           </VerticalTimelineElement>
         ))}
         <VerticalTimelineElement
