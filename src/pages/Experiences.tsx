@@ -106,29 +106,25 @@ const experiencesData: ExperienceDataProps[] = [
   },
 ];
 
-const Experiences: React.FC<SectionProps> = ({ id, style, className }) => {
+const Experiences: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
   return (
-    <Section id={id} style={style} className={className}>
+    <Section id={id} style={style} className={className} nextId={nextId}>
       <SectionHeader>My Experiences</SectionHeader>
       <VerticalTimeline animate>
-        {experiencesData.map((item) => (
-          <VerticalTimelineElement {...item.props}>
+        {experiencesData.map((item, idx) => (
+          <VerticalTimelineElement {...item.props} key={`exp-${idx}`}>
             <h3 className="font-semibold text-md vertical-timeline-element-title">{item.title}</h3>
             <h4 className="vertical-timeline-element-subtitle">{item.subtitle}</h4>
-            <p>
-              <ul className="pl-4 space-y-2 font-normal text-justify list-disc">
-                {item.content?.map((item) => (
-                  <li>{item}</li>
-                ))}
-              </ul>
-            </p>
+            <ul className="pl-4 space-y-2 font-normal text-justify list-disc">
+              {item.content?.map((item, pt) => (
+                <li key={`exp-${idx}-${pt}`}>{item}</li>
+              ))}
+            </ul>
 
             <div className="pt-4">
               {item.links?.map((link, j) => (
                 <a key={j} target="_blank" href={link.url} rel="noreferrer">
-                  <button
-                    className="px-4 py-2 mx-3 font-normal text-white bg-transparent border border-white rounded hover:bg-blue-500 hover:text-white hover:border-transparent"
-                  >
+                  <button className="px-4 py-2 mx-3 font-normal text-white bg-transparent border border-white rounded hover:bg-blue-500 hover:text-white hover:border-transparent">
                     {link.name}
                   </button>
                 </a>

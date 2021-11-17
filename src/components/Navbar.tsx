@@ -13,7 +13,7 @@ const NavItem: React.FC<NavItemProps> = ({ to, children, callback }) => {
   const DURATION = 300;
   return (
     <Link
-      activeClass=" bg-red-600"
+      activeClass="active"
       to={to}
       spy={false}
       smooth={true}
@@ -34,7 +34,7 @@ const NavItem: React.FC<NavItemProps> = ({ to, children, callback }) => {
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="sticky top-0 z-50 w-full bg-gray-200 shadow-md">
+    <nav className="sticky top-0 z-50 w-full bg-gray-100 shadow-md">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center p-2 text-gray-500 bg-gray-200 rounded-md hover:bg-gray-800 hover:text-titan-white-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-titan-white-200"
+              className="inline-flex items-center justify-center p-2 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-800 hover:text-titan-white-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-titan-white-200"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >

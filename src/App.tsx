@@ -5,24 +5,23 @@ import About from './pages/About';
 import Experiences from './pages/Experiences';
 import Project from './pages/Project';
 import Contact from './pages/Contact';
-import Divider from 'components/Divider';
+import ParticleBg from 'components/ParticleBg';
+import Footer from 'components/Footer';
+import 'App.css';
 
-import StarSky from 'react-star-sky';
-import 'react-star-sky/dist/index.css';
 const App: React.FC = () => {
   return (
-    <StarSky className="text-white" frameRate={30}>
+    <div>
       <AppNavBar />
-      <Intro id={'intro-section'} />
-      <Divider />
-      <About id={'about-section'} />
-      <Divider />
-      <Experiences id={'experiences-section'} />
-      <Divider />
-      <Project id={'projects-section'} />
-      <Divider />
-      <Contact id={'contact-section'} />
-    </StarSky>
+      <ParticleBg className="particle-js">
+        <Intro id={'intro-section'} nextId={'about-section'} />
+        <About id={'about-section'} nextId={'experiences-section'} />
+        <Experiences id={'experiences-section'} nextId={'projects-section'} />
+        <Project id={'projects-section'} nextId={'contact-section'} />
+        <Contact id={'contact-section'} />
+        <Footer />
+      </ParticleBg>
+    </div>
   );
 };
 

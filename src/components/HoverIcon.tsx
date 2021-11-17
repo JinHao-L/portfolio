@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import { IconType } from 'react-icons';
 import { createPopper } from '@popperjs/core';
 
@@ -10,15 +10,24 @@ export interface HoverIconProps {
 
 const HoverIcon: React.FC<HoverIconProps> = ({ name, Icon, color }) => {
   const [tooltipShow, setTooltipShow] = React.useState(false);
-  const btnRef = React.createRef<HTMLButtonElement>();
-  const tooltipRef = React.createRef<HTMLDivElement>();
-  const openLeftTooltip = () => {
+  const btnRef = createRef<HTMLButtonElement>();
+  const tooltipRef = createRef<HTMLDivElement>();
+  const openTooltip = () => {
     createPopper(btnRef.current as HTMLButtonElement, tooltipRef.current as HTMLDivElement, {
       placement: 'bottom',
+      modifiers: [
+        {
+          name: 'preventOverflow',
+          options: {
+            padding: 3 
+          }
+        }
+      ]
+      
     });
     setTooltipShow(true);
   };
-  const closeLeftTooltip = () => {
+  const closeTooltip = () => {
     setTooltipShow(false);
   };
 
@@ -26,8 +35,8 @@ const HoverIcon: React.FC<HoverIconProps> = ({ name, Icon, color }) => {
     <>
       <button
         key={name}
-        onMouseEnter={openLeftTooltip}
-        onMouseLeave={closeLeftTooltip}
+        onMouseEnter={openTooltip}
+        onMouseLeave={closeTooltip}
         ref={btnRef}
       >
         <Icon className="w-16 h-16 px-2 mb-2" color={color || 'white'}/>
@@ -36,7 +45,7 @@ const HoverIcon: React.FC<HoverIconProps> = ({ name, Icon, color }) => {
       <div
         className={
           (tooltipShow ? '' : 'hidden ') +
-          'bg-gray-600 border-0 mt-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-t-lg'
+          'bg-gray-600 border-0 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-t-lg'
         }
         ref={tooltipRef}
       >

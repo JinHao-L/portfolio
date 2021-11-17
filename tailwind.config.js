@@ -40,9 +40,10 @@ module.exports = {
         },
       },
     },
-    variants: {
-      extend: {},
-    },
     plugins: [],
+  },
+  variants: {
+    opacity: ({ after }) => after(['disabled']),
+    backgroundColor: ({ after }) => after(['disabled'])
   },
 };
