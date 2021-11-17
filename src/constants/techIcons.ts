@@ -1,6 +1,8 @@
 import {
+  SiAdobexd,
   SiAmazonaws,
   SiApachekafka,
+  SiCodemirror,
   SiDocker,
   SiExpo,
   SiExpress,
@@ -8,29 +10,48 @@ import {
   SiFirebase,
   SiGit,
   SiGithub,
+  SiGooglemaps,
   SiGradle,
   SiIonic,
   SiJava,
   SiJavascript,
+  SiJunit5,
   SiJupyter,
   SiKubernetes,
+  SiLeetcode,
+  SiMapbox,
   SiMongodb,
   SiNestjs,
   SiNodedotjs,
+  SiPassport,
   SiPostgresql,
   SiPostman,
   SiPython,
   SiReact,
+  SiRedux,
+  SiSocketdotio,
+  SiSwagger,
+  SiTailwindcss,
   SiTypescript,
   SiVim,
   SiVisualstudio,
   SiWebpack,
+  SiZoom,
 } from 'react-icons/si';
 import { FcLinux } from 'react-icons/fc';
+import { IconType } from 'react-icons';
+
+export interface TechIconType {
+  name: string;
+  Icon: IconType;
+  color?: string;
+}
 
 export const TYPESCRIPT_ICON = { Icon: SiTypescript, name: 'Typescript', color: '#007acc' };
 export const JAVASCRIPT_ICON = { Icon: SiJavascript, name: 'Javascript', color: '#F0DB4F' };
 export const REACT_ICON = { Icon: SiReact, name: 'React (JS & Native)', color: '#61DBFB' };
+export const REACT_JS_ICON = { Icon: SiReact, name: 'React JS', color: '#61DBFB' };
+export const REACT_NATIVE_ICON = { Icon: SiReact, name: 'React Native', color: '#61DBFB' };
 export const PYTHON_ICON = { Icon: SiPython, name: 'Python', color: '#4B8BBE' };
 export const NEST_ICON = { Icon: SiNestjs, name: 'NestJS', color: '#e0234e' };
 export const POSTGRES_ICON = { Icon: SiPostgresql, name: 'PostgreSQL', color: '#336791' };
@@ -39,7 +60,7 @@ export const NODE_ICON = { Icon: SiNodedotjs, name: 'NodeJS', color: '#68a063' }
 export const JAVA_ICON = { Icon: SiJava, name: 'Java', color: '#f89820' };
 export const GRADLE_ICON = { Icon: SiGradle, name: 'Gradle', color: '#0FA4CC' };
 export const EXPRESS_ICON = { Icon: SiExpress, name: 'ExpressJS', color: '#ffffff' };
-export const KAFKA_ICON = { Icon: SiApachekafka, name: 'Apache Kafka', color: '#ffffff' };
+export const KAFKA_ICON = { Icon: SiApachekafka, name: 'Apache Kafka', color: '#D3D3D3'};
 export const K8S_ICON = { Icon: SiKubernetes, name: 'Kubernetes', color: '#326ce5' };
 export const AWS_ICON = { Icon: SiAmazonaws, name: 'AWS Services', color: '#FF9900' };
 export const MONGO_ICON = { Icon: SiMongodb, name: 'MongoDB', color: '#3FA037' };
@@ -55,5 +76,19 @@ export const LINUX_ICON = { Icon: FcLinux, name: 'Linux (Ubuntu)' };
 export const POSTMAN_ICON = { Icon: SiPostman, name: 'Postman', color: '#F15A24' };
 export const JUPYTER_ICON = { Icon: SiJupyter, name: 'Jupyter Notebook', color: '#F37726' };
 export const FIREBASE_ICON = { Icon: SiFirebase, name: 'Firebase', color: '#FCCA3F' };
-export const EXPO_ICON = { Icon: SiExpo, name: 'Expo', color: '#ffffff' };
+export const EXPO_ICON = { Icon: SiExpo, name: 'Expo', color: '#D3D3D3' };
 export const FIGMA_ICON = { Icon: SiFigma, name: 'Figma', color: '#e04a34' };
+
+export const SOCKET_ICON = { Icon: SiSocketdotio, name: 'Socket.io', color: '#D3D3D3' };
+export const PASSPORT_JS_ICON = { Icon: SiPassport, name: 'Passport.js', color: '#00B9F1' };
+export const ZOOM_ICON = { Icon: SiZoom, name: 'Zoom API', color: '#2D8CFF' };
+export const SWAGGER_ICON = { Icon: SiSwagger, name: 'Swagger Docs', color: '#19b6b5' };
+export const LEETCODE_ICON = { Icon: SiLeetcode, name: 'Leetcode API', color: '#F69C14' };
+export const CODEMIRROR_ICON = { Icon: SiCodemirror, name: 'CodeMirror', color: '#FFFFFF' };
+export const TAILWINDCSS_ICON = { Icon: SiTailwindcss, name: 'Tailwind', color: '#09B6D4' };
+export const MAPBOX_ICON = { Icon: SiMapbox, name: 'Mapbox', color: '#4164FB' };
+export const JUNIT5_ICON = { Icon: SiJunit5, name: 'JUnit 5', color: '#DC524A' };
+export const JAVAFX_ICON = { Icon: SiJava, name: 'JavaFX', color: '#f89820' };
+export const REDUX_ICON = { Icon: SiRedux, name: 'React Redux', color: '#764abc' };
+export const ADOBE_XD_ICON = { Icon: SiAdobexd, name: 'Adobe XD', color: '#FE61F7' };
+export const GOOGLE_MAPS_ICON = { Icon: SiGooglemaps, name: 'Google Maps API', color: '#4285F4' };

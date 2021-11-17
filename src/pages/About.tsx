@@ -26,11 +26,12 @@ import {
   POSTMAN_ICON,
   PYTHON_ICON,
   REACT_ICON,
+  TAILWINDCSS_ICON,
   TYPESCRIPT_ICON,
   VIM_ICON,
   VSCODE_ICON,
   WEBPACK_ICON,
-} from 'components/TechIcons';
+} from 'constants/techIcons';
 import GithubGraph from 'components/GithubGraph';
 
 const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
@@ -64,6 +65,7 @@ const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
     MONGO_ICON,
     IONIC_ICON,
     WEBPACK_ICON,
+    TAILWINDCSS_ICON,
   ];
 
   const TOOLS = [
@@ -77,7 +79,6 @@ const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
     JUPYTER_ICON,
     FIGMA_ICON,
   ];
-
 
   return (
     <Section id={id} style={style} className={`mb-10 ${className}`} nextId={nextId}>
@@ -98,7 +99,7 @@ const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
             <SubSectionHeader>Tools I use:</SubSectionHeader>
             <IconList icons={TOOLS} />
           </div>
-          <GithubGraph/>
+          <GithubGraph />
         </div>
       </div>
     </Section>

@@ -98,27 +98,25 @@ const Navbar: React.FC = () => {
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
       >
-        {(ref) => (
-          <div className="bg-gray-200 md:hidden" id="mobile-menu">
-            <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <NavItem to={'intro-section'} callback={() => setIsOpen(false)}>
-                Home
-              </NavItem>
-              <NavItem to={'about-section'} callback={() => setIsOpen(false)}>
-                About
-              </NavItem>
-              <NavItem to={'experiences-section'} callback={() => setIsOpen(false)}>
-                Experiences
-              </NavItem>
-              <NavItem to={'projects-section'} callback={() => setIsOpen(false)}>
-                Projects
-              </NavItem>
-              <NavItem to={'contact-section'} callback={() => setIsOpen(false)}>
-                Contact Me
-              </NavItem>
-            </div>
+        <div className="bg-gray-100 md:hidden" id="mobile-menu">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <NavItem to={'intro-section'} callback={() => setIsOpen(false)}>
+              Home
+            </NavItem>
+            <NavItem to={'about-section'} callback={() => setIsOpen(false)}>
+              About
+            </NavItem>
+            <NavItem to={'experiences-section'} callback={() => setIsOpen(false)}>
+              Experiences
+            </NavItem>
+            <NavItem to={'projects-section'} callback={() => setIsOpen(false)}>
+              Projects
+            </NavItem>
+            <NavItem to={'contact-section'} callback={() => setIsOpen(false)}>
+              Contact Me
+            </NavItem>
           </div>
-        )}
+        </div>
       </Transition>
     </nav>
   );

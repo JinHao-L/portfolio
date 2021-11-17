@@ -4,6 +4,8 @@ import Section, { SectionProps } from '../components/Section';
 import { useFormik, FormikHelpers } from 'formik';
 import * as yup from 'yup';
 import emailjs from 'emailjs-com';
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_USER_ID } from 'constants/variables';
+import { Transition } from '@headlessui/react';
 
 const validationSchema = yup.object({
   name: yup.string().required('Name is required'),
@@ -27,16 +29,10 @@ const Contact: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
   ) => {
     setSubmitting(true);
     return emailjs
-      .send(
-        process.env.REACT_APP_EMAILJS_SVC_ID || '',
-        'template_k5j5k1h',
-        formData,
-        process.env.REACT_APP_EMAILJS_USER_ID,
-      )
+      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData, EMAILJS_USER_ID)
       .then((result) => {
-        console.log(result);
-        setSubmitting(false);
         setSubmitted(true);
+        setSubmitting(false);
         console.log(result.text);
       })
       .catch((error) => {
@@ -110,8 +106,8 @@ const Contact: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
 
             <button
               disabled={submitted || formik.isSubmitting}
-              type="submit"
-              className="flex flex-row justify-center w-full py-3 my-1 text-xl text-center text-white bg-green-600 rounded place-items-center disabled:opacity-50 disabled:bg-green-600 hover:bg-green-500 focus:outline-none"
+              type={'submit'}
+              className="flex flex-row justify-center w-full py-3 mt-1 text-xl text-center text-white bg-green-600 rounded place-items-center disabled:opacity-50 disabled:bg-green-600 hover:bg-green-500 focus:outline-none"
             >
               {formik.isSubmitting && (
                 <svg
@@ -137,6 +133,25 @@ const Contact: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
               )}{' '}
               Send 🚀
             </button>
+
+            <Transition
+              show={submitted}
+              enter="transition ease-out duration-100 transform"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="transition ease-in duration-75 transform"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <div
+                className={
+                  'p-4 rounded-b-xl w-full text-center bg-yellow-400 bg-opacity-30 border-2 border-t-0 border-yellow-400 border-opacity-50'
+                }
+              >
+                Email sent successfully! Thank you for your feedback!
+                <br />I will reach out to you as soon as I can.
+              </div>
+            </Transition>
           </form>
         </div>
       </div>

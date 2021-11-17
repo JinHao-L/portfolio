@@ -1,9 +1,9 @@
+import { TechIconType } from 'constants/techIcons';
 import React from 'react';
-import { IconType } from 'react-icons';
 import HoverIcon from './HoverIcon';
 
 export interface IconListProps {
-  icons: { Icon: IconType; name: string; color?: string }[];
+  icons: TechIconType[];
 }
 
 const IconList: React.FC<IconListProps> = ({ icons }) => {
