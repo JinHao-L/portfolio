@@ -90,7 +90,7 @@ const experiencesData: ExperienceDataProps[] = [
   {
     props: {
       date: 'Feb 2017 – Feb 2019',
-      dateClassName: 'text-white',
+      dateClassName: 'text-white text-lg',
       className: 'vertical-timeline-element--education',
       contentStyle: { background: '#4b5320', color: '#fff' },
       contentArrowStyle: { borderRight: '7px solid #4b5320' },
@@ -124,7 +124,7 @@ const Experiences: React.FC<SectionProps> = ({ id, style, className, nextId }) =
             <div className="pt-4">
               {item.links?.map((link, j) => (
                 <a key={j} target="_blank" href={link.url} rel="noreferrer">
-                  <button className="px-4 py-2 mx-3 font-normal text-white bg-transparent border border-white rounded hover:bg-blue-500 hover:text-white hover:border-transparent">
+                  <button className="px-4 py-2 mx-3 font-normal text-white bg-transparent border border-white rounded hover:bg-titan-white-500 hover:text-gray-800 hover:border-transparent">
                     {link.name}
                   </button>
                 </a>

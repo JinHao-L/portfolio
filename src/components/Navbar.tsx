@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="py-2 text-gray-800 font-small text-md md:hidden" role="button">
+            <div className="py-2 text-lg text-gray-800 font-small md:hidden" role="button">
               <Link
                 activeClass="active"
                 to={'intro-section'}
