@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PAT }}
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
@@ -28,12 +26,9 @@ jobs:
 
       - name: Deploy to GH Pages
         run: |
-          git remote rm origin
-          git remote add origin git@github.com:JinHao-L/portfolio.git
-          git config --global user.name 'JinHao-L'
-          git config --global user.email 'JinHao-L@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${DEPLOY_TOKEN}@github.com/JinHao-L/portfolio.git
           yarn run deploy
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           REACT_APP_EMAILJS_SVC_ID: ${{ secrets.REACT_APP_EMAILJS_SVC_ID }}
           REACT_APP_EMAILJS_USER_ID: ${{ secrets.REACT_APP_EMAILJS_USER_ID }}
