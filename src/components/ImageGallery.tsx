@@ -22,7 +22,7 @@ const ImageSRLOverlay: React.FC<{ images: ImageType[]; callbacks: Callbacks }> =
     settings: {
       overlayColor: 'rgb(0, 0, 0, 0.8)',
       disablePanzoom: true,
-      slideAnimationType: 'both'
+      slideAnimationType: 'both',
     },
     buttons: {
       backgroundColor: 'rgba(30,30,36,0.8)',
@@ -72,7 +72,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, className }) => {
             src={images[currentImg].src}
             alt={images[currentImg].caption}
             className={`${className} w-full object-contain`}
-            style={{maxHeight: '50vh'}}
+            style={{ maxHeight: '50vh' }}
           />
         </button>
         <button

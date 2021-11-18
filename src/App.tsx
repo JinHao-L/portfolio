@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import AppNavBar from './components/Navbar';
 import Intro from './pages/Intro';
 import About from './pages/About';
@@ -36,7 +36,7 @@ const App: React.FC = () => {
         <Fab
           className={visible ? 'inline text-gray-800' : 'hidden'}
           onClick={() => animateScroll.scrollToTop({ duration: 500, smooth: true })}
-          color={"titan-white"}
+          color={'titan-white'}
         />
       </ParticleBg>
       <Footer />

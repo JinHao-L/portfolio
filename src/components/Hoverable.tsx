@@ -53,7 +53,11 @@ const Hoverable: React.FC<HoverIconProps> = ({
           }
           ref={tooltipRef}
         >
-          <div className={'text-white opacity-75 font-semibold border-b border-solid uppercase rounded-t-md'}>
+          <div
+            className={
+              'text-white opacity-75 font-semibold border-b border-solid uppercase rounded-t-md'
+            }
+          >
             {hoverText}
           </div>
         </div>

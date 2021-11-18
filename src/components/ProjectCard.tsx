@@ -14,10 +14,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
     <div className="z-10 grid w-full grid-cols-1 gap-3 py-5 xl:grid-cols-2 xl:grid-rows-1">
       <SubSectionHeader className="mb-3 text-center xl:hidden">{data.title}</SubSectionHeader>
 
-      <ImageGallery
-        images={data.images}
-        className="border-b-8 rounded-md border-pale-sky-300 "
-      />
+      <ImageGallery images={data.images} className="border-b-8 rounded-md border-pale-sky-300 " />
 
       <div className="px-3 py-2 text-md">
         <SubSectionHeader className="hidden mb-3 text-center xl:block">

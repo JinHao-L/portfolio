@@ -53,7 +53,7 @@ const Intro: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
                     href={link}
                     target="_blank"
                     rel="noreferrer"
-                    className="relative flex items-center w-16 h-16 leading-none text-indigo-800 divide-x divide-gray-600 rounded-full bg-titan-white-50 hover:bg-gray-500 hover:text-titan-white-100"
+                    className="relative flex items-center w-16 h-16 leading-none text-indigo-800 rounded-full bg-titan-white-500 hover:bg-titan-white-700 hover:text-titan-white-100"
                   >
                     <Icon className="m-auto" size={30} />
                   </a>

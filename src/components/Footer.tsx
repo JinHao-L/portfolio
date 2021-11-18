@@ -27,7 +27,13 @@ const Footer: React.FC = () => {
         <div className="">© Copyright {new Date().getFullYear()}</div>
         <div className="flex flex-row md:flex-auto md:flex-row-reverse">
           {SOCIALS.map(({ type, Icon, link }) => (
-            <a href={link} className="p-1 mx-1 bg-gray-100 rounded-full" target="_blank" rel="noreferrer" key={type}>
+            <a
+              href={link}
+              className="p-1 mx-1 bg-gray-100 rounded-full"
+              target="_blank"
+              rel="noreferrer"
+              key={type}
+            >
               <Icon
                 size={20}
                 className="text-gray-800 bg-gray-100 cursor-pointer fill-current hover:text-gray-400"

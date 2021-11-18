@@ -4,7 +4,7 @@ import { MdKeyboardArrowUp } from 'react-icons/md';
 interface FabProps {
   color?: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
-  className?: string
+  className?: string;
 }
 
 const Fab: React.FC<FabProps> = ({ color = 'red', onClick, className }) => {
