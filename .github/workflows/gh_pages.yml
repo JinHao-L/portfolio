@@ -26,6 +26,8 @@ jobs:
 
       - name: Deploy to GH Pages
         run: |
+          git config --global user.name 'JinHao-L'
+          git config --global user.email 'JinHao-L@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${DEPLOY_TOKEN}@github.com/JinHao-L/portfolio.git
           yarn run deploy
         env:
