@@ -58,10 +58,10 @@ const Contact: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
       style={style}
       className={className}
       nextId={nextId}
-      minHeight={'calc(100vh - 130px)'}
+      minHeight={'calc(100vh - 140px)'}
     >
       <SectionHeader>Contact Me</SectionHeader>
-      <div className="container flex flex-col items-center justify-center flex-1 px-2 pb-5 m-auto sm:pt-10 lg:px-40 xl:px-64 2xl:px-96">
+      <div className="container flex flex-col items-center justify-center flex-1 px-2 pt-2 pb-5 m-auto sm:pt-10 lg:px-40 xl:px-64 2xl:px-96">
         <div className="w-full px-6 py-8 text-black bg-gray-300 rounded shadow-md opacity-90">
           <h1 className="mb-8 text-3xl text-center">Leave me a message! 📬</h1>
           <form onSubmit={formik.handleSubmit} noValidate>

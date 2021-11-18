@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import { Transition } from '@headlessui/react';
+import { MdMenu, MdClose } from 'react-icons/md';
+import SocialBar from './SocialBar';
+import { GITHUB_SOCIAL } from 'constants/socials';
 
 interface NavItemProps {
   to: string;
@@ -33,6 +36,8 @@ const NavItem: React.FC<NavItemProps> = ({ to, children, callback }) => {
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const Icon = GITHUB_SOCIAL.Icon;
+
   return (
     <nav className="sticky top-0 z-50 w-full bg-gray-100 shadow-md">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -60,30 +65,28 @@ const Navbar: React.FC = () => {
               </div>
             </div>
           </div>
+
+          <div className="hidden -mr-2 md:flex">
+            <a
+              href={GITHUB_SOCIAL.link}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center p-2 text-gray-800 bg-gray-100 rounded-md hover:bg-gray-800 hover:text-titan-white-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-titan-white-200"
+            >
+              <span className="sr-only">Open github</span>
+              <Icon className="m-auto" size={30} />
+            </a>
+          </div>
           <div className="flex -mr-2 md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center p-2 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-800 hover:text-titan-white-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-titan-white-200"
+              className="inline-flex items-center justify-center p-2 text-gray-800 bg-gray-100 rounded-md hover:bg-gray-800 hover:text-titan-white-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-titan-white-200"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
-              <svg
-                className="block w-6 h-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d={!isOpen ? 'M4 6h16M4 12h16M4 18h16' : 'M6 18L18 6M6 6l12 12'}
-                />
-              </svg>
+              {isOpen ? <MdClose size={24} /> : <MdMenu size={24} />}
             </button>
           </div>
         </div>
@@ -115,6 +118,7 @@ const Navbar: React.FC = () => {
             <NavItem to={'contact-section'} callback={() => setIsOpen(false)}>
               Contact Me
             </NavItem>
+            <SocialBar className={'justify-evenly'} size={25} />
           </div>
         </div>
       </Transition>
