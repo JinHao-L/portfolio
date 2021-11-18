@@ -60,7 +60,7 @@ const ParticleBg: React.FC<ParticleBgProps> = ({ children, className }) => {
         }}
         style={{ zIndex: -1, position: 'fixed', width: '100%' }}
       />
-      <div style={{ zIndex: 1 }}>{children}</div>
+      <div style={{ zIndex: 1 }} className={'relative'}>{children}</div>
     </div>
   );
 };

@@ -16,7 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
 
       <ImageGallery
         images={data.images}
-        className="w-full border-b-8 rounded-md border-pale-sky-300 "
+        className="border-b-8 rounded-md border-pale-sky-300 "
       />
 
       <div className="px-3 py-2 text-md">

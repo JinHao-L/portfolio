@@ -59,11 +59,11 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, className }) => {
   return (
     <div className="self-center">
       <ImageSRLOverlay images={images} callbacks={callbacks} />
-      <div className={`flex items-center justify-center overflow-hidden ${canCycle ? '-mx-6' : ''}`}>
+      <div className={`relative flex justify-center`}>
         <button
           style={{ display: canCycle ? 'grid' : 'none' }}
           onClick={() => setCurrentImg((prev) => (prev - 1 + images.length) % images.length)}
-          className={'bg-white rounded-full relative -right-8 shadow-md'}
+          className={'bg-white rounded-full absolute left-0 top-1/2 mx-3'}
         >
           {<MdNavigateBefore size={25} className="text-blue-900" />}
         </button>
@@ -71,14 +71,14 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, className }) => {
           <img
             src={images[currentImg].src}
             alt={images[currentImg].caption}
-            className={`${className} object-contain`}
+            className={`${className} w-full object-contain`}
             style={{maxHeight: '50vh'}}
           />
         </button>
         <button
           style={{ display: canCycle ? 'grid' : 'none' }}
           onClick={() => setCurrentImg((prev) => (prev + 1) % images.length)}
-          className={' bg-white rounded-full relative -left-8 shadow-md'}
+          className={' bg-white rounded-full absolute right-0 top-1/2 mx-3'}
         >
           {<MdNavigateNext size={25} className="text-blue-900" />}
         </button>

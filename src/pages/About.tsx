@@ -99,7 +99,9 @@ const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
             <SubSectionHeader>Tools I use:</SubSectionHeader>
             <IconList icons={TOOLS} />
           </div>
-          <GithubGraph />
+          <div className="hidden sm:block">
+            <GithubGraph />
+          </div>
         </div>
       </div>
     </Section>
