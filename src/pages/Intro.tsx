@@ -5,7 +5,6 @@ import profilePic from 'assets/profile.jpeg';
 import SOCIALS from 'constants/socials';
 
 const Intro: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
-  const INTRO = "Hi there, I'm Jin Hao";
   const ROLES = ['Software Developer', 'NUS Penultimate Student', 'Cyber Security Enthusiast'];
 
   return (
@@ -14,8 +13,9 @@ const Intro: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
         <div className="grid items-center grid-cols-1 gap-3 transition-transform lg:grid-cols-2">
           <img src={profilePic} className="z-10 m-auto my-10 rounded-full" alt="profile" />
           <div className="text-center lg:order-first">
-            <span className="flex flex-row justify-center text-3xl md:text-4xl lg:text-5xl">
-              {INTRO} <span className="animate-wave">👋🏻</span>
+            <span className="text-3xl whitespace-nowrap md:text-4xl lg:text-5xl">
+              Hi there, <wbr />
+              I'm Jin Hao
             </span>
             <div className="mt-8 text-2xl md:text-3xl lg:text-4xl">
               I am a

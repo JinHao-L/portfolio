@@ -24,6 +24,4 @@ yarn-error.log*
 
 .env
 .eslintcache
-csr.key
-csr.pub
-csr.cert
+cert/
