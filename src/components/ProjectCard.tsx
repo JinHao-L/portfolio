@@ -21,15 +21,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
           {data.title}
         </SubSectionHeader>
         <div className="grid grid-cols-1 gap-2">
-          {data.description.map((text) => (
-            <p className="font-normal text-justify">{text}</p>
+          {data.description.map((text, key) => (
+            <p className="font-normal text-justify" key={`${data.title}-${key}`}>
+              {text}
+            </p>
           ))}
         </div>
 
         <div className="pt-4">
           {data.links?.map((link, j) => (
             <a
-              key={j}
+              key={`proj-${j}`}
               {...(link.disabled
                 ? {}
                 : {
