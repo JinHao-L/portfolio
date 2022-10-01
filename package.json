@@ -50,7 +50,7 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "cp CNAME ./build/CNAME && gh-pages -d build",
     "prettier": "npx prettier --write ./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}"
   },
   "eslintConfig": {
