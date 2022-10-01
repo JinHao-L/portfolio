@@ -28,8 +28,8 @@ jobs:
         run: |
           git config --global user.name 'JinHao-L'
           git config --global user.email 'JinHao-L@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:${DEPLOY_TOKEN}@github.com/JinHao-L/portfolio.git
-          yarn run deploy
+          git remote set-url origin https://x-access-token:${DEPLOY_TOKEN}@github.com/JinHao-L/JinHao-L.github.io.git
+          yarn deploy
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           REACT_APP_EMAILJS_SVC_ID: ${{ secrets.REACT_APP_EMAILJS_SVC_ID }}
