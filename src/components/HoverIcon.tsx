@@ -2,12 +2,20 @@ import React from 'react';
 import { TechIconType } from 'constants/techIcons';
 import Hoverable from './Hoverable';
 
-export type HoverIconProps = {} & TechIconType;
+export type HoverIconProps = { className?: string } & TechIconType;
 
-const HoverIcon: React.FC<HoverIconProps> = ({ name, Icon, color }) => {
+const HoverIcon: React.FC<HoverIconProps> = ({
+  name,
+  Icon,
+  color,
+  link,
+  className = 'w-16 h-16',
+}) => {
   return (
-    <Hoverable hoverText={name} className='mb-2'>
-      <Icon className="w-16 h-16 px-2" color={color || 'white'} />
+    <Hoverable hoverText={name} className="mb-2">
+      <a href={link} target="_blank" rel="noreferrer">
+        <Icon className={`px-2 ${className}`} color={color || 'white'} />
+      </a>
     </Hoverable>
   );
 };

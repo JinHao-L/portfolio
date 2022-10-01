@@ -16,18 +16,16 @@ const NavItem: React.FC<NavItemProps> = ({ to, children, callback }) => {
   const DURATION = 300;
   return (
     <Link
-      activeClass="active"
+      className="text-black hover:text-white"
+      activeClass="text-indigo-800 font-medium"
       to={to}
-      spy={false}
+      spy={true}
       smooth={true}
       offset={SCROLL_OFFSET}
       duration={DURATION}
       onClick={() => callback && setTimeout(callback, DURATION)}
     >
-      <div
-        role="button"
-        className="px-3 py-2 text-black rounded-md font-small text-md hover:bg-gray-700 hover:text-white"
-      >
+      <div role="button" className="px-3 py-2 rounded-md font-small text-md hover:bg-gray-700">
         {children}
       </div>
     </Link>
@@ -71,7 +69,7 @@ const Navbar: React.FC = () => {
               href={GITHUB_SOCIAL.link}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center p-2 text-gray-800 bg-gray-100 rounded-md hover:bg-gray-800 hover:text-titan-white-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-titan-white-200"
+              className="inline-flex items-center justify-center p-2 text-gray-800 transition-colors bg-gray-100 rounded-md hover:bg-gray-800 hover:text-titan-white-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-titan-white-200"
             >
               <span className="sr-only">Open github</span>
               <Icon className="m-auto" size={30} />
@@ -81,7 +79,7 @@ const Navbar: React.FC = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center p-2 text-gray-800 bg-gray-100 rounded-md hover:bg-gray-800 hover:text-titan-white-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-titan-white-200"
+              className="inline-flex items-center justify-center p-2 text-gray-800 transition-colors bg-gray-100 rounded-md hover:bg-gray-800 hover:text-titan-white-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-titan-white-200"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
@@ -94,14 +92,14 @@ const Navbar: React.FC = () => {
 
       <Transition
         show={isOpen}
-        enter="transition ease-out duration-100 transform"
-        enterFrom="opacity-0 scale-95"
-        enterTo="opacity-100 scale-100"
-        leave="transition ease-in duration-75 transform"
-        leaveFrom="opacity-100 scale-100"
-        leaveTo="opacity-0 scale-95"
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-y-95"
+        enterTo="transform opacity-100 scale-y-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-y-100"
+        leaveTo="transform opacity-0 scale-y-95"
       >
-        <div className="bg-gray-100 md:hidden" id="mobile-menu">
+        <div className="absolute w-full origin-top bg-gray-100 md:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <NavItem to={'intro-section'} callback={() => setIsOpen(false)}>
               Home

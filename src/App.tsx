@@ -27,7 +27,7 @@ const App: React.FC = () => {
   return (
     <div>
       <AppNavBar />
-      <ParticleBg className="particle-js">
+      <ParticleBg>
         <Intro id={'intro-section'} nextId={'about-section'} />
         <About id={'about-section'} nextId={'experiences-section'} />
         <Experiences id={'experiences-section'} nextId={'projects-section'} />

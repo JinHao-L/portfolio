@@ -1,16 +1,20 @@
 import React from 'react';
-import Particles from 'react-tsparticles';
+import { Particles } from 'react-tsparticles';
+import { loadFull } from 'tsparticles';
+import { Engine } from 'tsparticles-engine';
 
-interface ParticleBgProps {
-  className?: string;
-}
+const ParticleBg: React.FC = ({ children }) => {
+  const particlesInit = async (engine: Engine) => {
+    await loadFull(engine);
+  };
 
-const ParticleBg: React.FC<ParticleBgProps> = ({ children, className }) => {
   return (
     <div className="text-white bg-gray-900">
       <Particles
-        className={`fixed ${className}`}
-        params={{
+        id="tsparticles"
+        init={particlesInit}
+        style={{ zIndex: -1, position: 'fixed', width: '100%' }}
+        options={{
           fpsLimit: 60,
           particles: {
             color: {
@@ -58,7 +62,6 @@ const ParticleBg: React.FC<ParticleBgProps> = ({ children, className }) => {
           detectRetina: true,
           zLayers: 1,
         }}
-        style={{ zIndex: -1, position: 'fixed', width: '100%' }}
       />
       <div style={{ zIndex: 1 }} className={'relative'}>
         {children}

@@ -12,20 +12,25 @@ import {
   FIREBASE_ICON,
   GIT_ICON,
   GRADLE_ICON,
+  GRAPHQL_ICON,
   IONIC_ICON,
   JAVASCRIPT_ICON,
   JAVA_ICON,
+  JIRA_ICON,
   JUPYTER_ICON,
   K8S_ICON,
   KAFKA_ICON,
   LINUX_ICON,
   MONGO_ICON,
   NEST_ICON,
+  NEXT_JS_ICON,
   NODE_ICON,
   POSTGRES_ICON,
   POSTMAN_ICON,
   PYTHON_ICON,
   REACT_ICON,
+  RUBY_ICON,
+  STYLED_COMP_ICON,
   TAILWINDCSS_ICON,
   TYPESCRIPT_ICON,
   VIM_ICON,
@@ -36,7 +41,7 @@ import GithubGraph from 'components/GithubGraph';
 
 const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
   const DESCRIPTION =
-    'I am a penultimate Computing undergraduate at the National University of Singapore. ' +
+    'I am a final-year Computing undergraduate at the National University of Singapore. ' +
     'I am currently specialising in Software Engineering and Computer Security. ' +
     'I believe that both specialisations are important to create inclusive, secure technologies that will be used by the masses.';
 
@@ -49,10 +54,15 @@ const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
     TYPESCRIPT_ICON,
     JAVASCRIPT_ICON,
     REACT_ICON,
+    NEXT_JS_ICON,
     PYTHON_ICON,
+    RUBY_ICON,
     NEST_ICON,
     POSTGRES_ICON,
     NODE_ICON,
+    TAILWINDCSS_ICON,
+    GRAPHQL_ICON,
+    STYLED_COMP_ICON,
   ];
 
   const DABBLED = [
@@ -60,12 +70,10 @@ const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
     GRADLE_ICON,
     EXPRESS_ICON,
     KAFKA_ICON,
-    K8S_ICON,
     AWS_ICON,
     MONGO_ICON,
     IONIC_ICON,
     WEBPACK_ICON,
-    TAILWINDCSS_ICON,
   ];
 
   const TOOLS = [
@@ -73,11 +81,13 @@ const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
     GIT_ICON,
     VSCODE_ICON,
     DOCKER_ICON,
+    K8S_ICON,
     LINUX_ICON,
     POSTMAN_ICON,
     FIREBASE_ICON,
     JUPYTER_ICON,
     FIGMA_ICON,
+    JIRA_ICON,
   ];
 
   return (

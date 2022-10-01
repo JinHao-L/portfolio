@@ -19,15 +19,15 @@ const Section: React.FC<SectionProps> = ({
   minHeight = 'calc(100vh - 60px)',
 }) => {
   return (
-    <div
+    <Element
       id={id}
+      name={id}
       className={`pt-4 px-8 m-0 flex flex-col  ${className || ''}`}
       style={{ minHeight: minHeight, ...style }}
     >
-      <Element name={id}> </Element>
       <div className="items-start flex-grow">{children}</div>
       {nextId && <Divider scrollTarget={nextId} className={'relative bottom-5'} />}
-    </div>
+    </Element>
   );
 };
 

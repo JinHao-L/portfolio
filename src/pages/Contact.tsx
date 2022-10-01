@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Section, { SectionProps } from '../components/Section';
 import { useFormik, FormikHelpers } from 'formik';
 import * as yup from 'yup';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_USER_ID } from 'constants/variables';
 import { Transition } from '@headlessui/react';
 

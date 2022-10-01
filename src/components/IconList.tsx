@@ -4,13 +4,14 @@ import HoverIcon from './HoverIcon';
 
 export interface IconListProps {
   icons: TechIconType[];
+  iconClassName?: string;
 }
 
-const IconList: React.FC<IconListProps> = ({ icons }) => {
+const IconList: React.FC<IconListProps> = ({ icons, iconClassName }) => {
   return (
     <div className="flex flex-row flex-wrap">
-      {icons.map((item) => (
-        <HoverIcon Icon={item.Icon} name={item.name} color={item.color} key={item.name} />
+      {icons.map((item, id) => (
+        <HoverIcon key={`${item.name}-${id}`} className={iconClassName} {...item} />
       ))}
     </div>
   );

@@ -87,9 +87,9 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, className }) => {
   );
 };
 
-const withSLR = (
-  Component: React.ComponentType<ImageGalleryProps>,
-): React.FC<ImageGalleryProps> => ({ ...props }) => {
+const withSLR = (Component: React.FC<ImageGalleryProps>): React.FC<ImageGalleryProps> => ({
+  ...props
+}) => {
   return (
     <SimpleReactLightbox>
       <Component {...props} />

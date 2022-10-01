@@ -2,7 +2,9 @@ import {
   SiAdobexd,
   SiAmazonaws,
   SiApachekafka,
+  SiBinance,
   SiCodemirror,
+  SiCss3,
   SiDocker,
   SiExpo,
   SiExpress,
@@ -12,9 +14,11 @@ import {
   SiGithub,
   SiGooglemaps,
   SiGradle,
+  SiGraphql,
   SiIonic,
   SiJava,
   SiJavascript,
+  SiJira,
   SiJunit5,
   SiJupyter,
   SiKubernetes,
@@ -22,6 +26,7 @@ import {
   SiMapbox,
   SiMongodb,
   SiNestjs,
+  SiNextdotjs,
   SiNodedotjs,
   SiPassport,
   SiPostgresql,
@@ -29,7 +34,9 @@ import {
   SiPython,
   SiReact,
   SiRedux,
+  SiRubyonrails,
   SiSocketdotio,
+  SiStyledcomponents,
   SiSwagger,
   SiTailwindcss,
   SiTypescript,
@@ -40,22 +47,49 @@ import {
 } from 'react-icons/si';
 import { FcLinux } from 'react-icons/fc';
 import { IconType } from 'react-icons';
+import { ReactComponent as EthersSvg } from 'assets/logo/ethers.svg';
+import { ReactComponent as SwitcheoSvg } from 'assets/logo/swth.svg';
+import { ReactComponent as ZilliqaSvg } from 'assets/logo/zilliqa.svg';
+import { ReactComponent as ChromeSvg } from 'assets/logo/chrome.svg';
+import { ReactComponent as RxjsSvg } from 'assets/logo/rxjs.svg';
+import { ReactComponent as ReactQuerySvg } from 'assets/logo/react-query.svg';
+import { ReactComponent as JenkinsSvg } from 'assets/logo/jenkins.svg';
 
 export interface TechIconType {
   name: string;
   Icon: IconType;
   color?: string;
+  link?: string;
 }
 
 export const TYPESCRIPT_ICON = { Icon: SiTypescript, name: 'Typescript', color: '#007acc' };
 export const JAVASCRIPT_ICON = { Icon: SiJavascript, name: 'Javascript', color: '#F0DB4F' };
 export const REACT_ICON = { Icon: SiReact, name: 'React (JS & Native)', color: '#61DBFB' };
 export const REACT_JS_ICON = { Icon: SiReact, name: 'React JS', color: '#61DBFB' };
+export const NEXT_JS_ICON = {
+  Icon: SiNextdotjs,
+  name: 'Next.JS',
+  color: '#A8B9C0',
+  link: 'https://nextjs.org/',
+};
 export const REACT_NATIVE_ICON = { Icon: SiReact, name: 'React Native', color: '#61DBFB' };
 export const PYTHON_ICON = { Icon: SiPython, name: 'Python', color: '#4B8BBE' };
-export const NEST_ICON = { Icon: SiNestjs, name: 'NestJS', color: '#e0234e' };
+export const NEST_ICON = {
+  Icon: SiNestjs,
+  name: 'NestJS',
+  color: '#E0234E',
+  link: 'https://nestjs.com/',
+};
 export const POSTGRES_ICON = { Icon: SiPostgresql, name: 'PostgreSQL', color: '#336791' };
 export const NODE_ICON = { Icon: SiNodedotjs, name: 'NodeJS', color: '#68a063' };
+export const GRAPHQL_ICON = { Icon: SiGraphql, name: 'GraphQL', color: '#E535AB' };
+export const CSS_ICON = { Icon: SiCss3, name: 'CSS', color: '#0A90F0' };
+export const STYLED_COMP_ICON = {
+  Icon: SiStyledcomponents,
+  name: 'Styled Components',
+  color: 'pink',
+  link: 'https://styled-components.com/',
+};
 
 export const JAVA_ICON = { Icon: SiJava, name: 'Java', color: '#f89820' };
 export const GRADLE_ICON = { Icon: SiGradle, name: 'Gradle', color: '#0FA4CC' };
@@ -66,6 +100,7 @@ export const AWS_ICON = { Icon: SiAmazonaws, name: 'AWS Services', color: '#FF99
 export const MONGO_ICON = { Icon: SiMongodb, name: 'MongoDB', color: '#3FA037' };
 export const IONIC_ICON = { Icon: SiIonic, name: 'Ionic', color: '#498AFF' };
 export const WEBPACK_ICON = { Icon: SiWebpack, name: 'Webpack', color: '#1c78c0' };
+export const RUBY_ICON = { Icon: SiRubyonrails, name: 'Ruby on Rails', color: '#cc0000' };
 
 export const VIM_ICON = { Icon: SiVim, name: 'Vim', color: '#029833' };
 export const GITHUB_ICON = { Icon: SiGithub, name: 'Github', color: '#f34f29' };
@@ -77,7 +112,8 @@ export const POSTMAN_ICON = { Icon: SiPostman, name: 'Postman', color: '#F15A24'
 export const JUPYTER_ICON = { Icon: SiJupyter, name: 'Jupyter Notebook', color: '#F37726' };
 export const FIREBASE_ICON = { Icon: SiFirebase, name: 'Firebase', color: '#FCCA3F' };
 export const EXPO_ICON = { Icon: SiExpo, name: 'Expo', color: '#D3D3D3' };
-export const FIGMA_ICON = { Icon: SiFigma, name: 'Figma', color: '#e04a34' };
+export const FIGMA_ICON = { Icon: SiFigma, name: 'Figma', color: '#E04A34' };
+export const JIRA_ICON = { Icon: SiJira, name: 'Jira', color: '#0052CC' };
 
 export const SOCKET_ICON = { Icon: SiSocketdotio, name: 'Socket.io', color: '#D3D3D3' };
 export const PASSPORT_JS_ICON = { Icon: SiPassport, name: 'Passport.js', color: '#00B9F1' };
@@ -92,3 +128,46 @@ export const JAVAFX_ICON = { Icon: SiJava, name: 'JavaFX', color: '#f89820' };
 export const REDUX_ICON = { Icon: SiRedux, name: 'React Redux', color: '#764abc' };
 export const ADOBE_XD_ICON = { Icon: SiAdobexd, name: 'Adobe XD', color: '#FE61F7' };
 export const GOOGLE_MAPS_ICON = { Icon: SiGooglemaps, name: 'Google Maps API', color: '#4285F4' };
+export const REACT_QUERY_ICON = {
+  Icon: ReactQuerySvg as IconType,
+  name: 'React Query',
+  link: 'https://tanstack.com/query/v4',
+};
+
+export const ZILLIQA_ICON = {
+  Icon: ZilliqaSvg as IconType,
+  name: 'Zilliqa',
+  link: 'https://github.com/Zilliqa/zilliqa-js',
+};
+export const BINANCE_ICON = {
+  Icon: SiBinance,
+  name: 'Binance',
+  color: '#F0B90B',
+  link: 'https://github.com/bnb-chain/javascript-sdk',
+};
+export const ETHEREUM_ICON = {
+  Icon: EthersSvg as IconType,
+  name: 'Ethers',
+  link: 'https://docs.ethers.io/',
+};
+export const SWITCHEO_ICON = {
+  Icon: SwitcheoSvg as IconType,
+  name: 'Switcheo Tradehub',
+  link: 'https://github.com/Switcheo/tradehub-api-js',
+};
+
+export const CHROME_ICON = {
+  Icon: ChromeSvg as IconType,
+  name: 'Chrome Extension',
+};
+
+export const RXJS_ICON = {
+  Icon: RxjsSvg as IconType,
+  name: 'RxJS',
+  link: 'https://rxjs.dev/',
+};
+
+export const JENKINS_ICON = {
+  Icon: JenkinsSvg as IconType,
+  name: 'Jenkins',
+};

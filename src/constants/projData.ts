@@ -199,7 +199,7 @@ const NUUDLE: ProjectData = {
   links: [
     {
       title: 'Download Nuudle here!',
-      url: 'http://nuscats.herokuapp.com',
+      url: 'https://github.com/ay2021s1-cs2103t-t12-4/tp/releases',
     },
     { title: 'Documentation', url: 'https://ay2021s1-cs2103t-t12-4.github.io/tp' },
     { title: 'Source code', url: 'https://github.com/JinHao-L/nuudle' },

@@ -5,7 +5,7 @@ import profilePic from 'assets/profile.jpeg';
 import SOCIALS from 'constants/socials';
 
 const Intro: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
-  const ROLES = ['Software Developer', 'NUS Penultimate Student', 'Cyber Security Enthusiast'];
+  const ROLES = ['Software Developer', 'NUS Final Year Student', 'Cyber Security Enthusiast'];
 
   return (
     <Section id={id} style={style} className={className} nextId={nextId}>

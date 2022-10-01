@@ -38,7 +38,9 @@ const Hoverable: React.FC<HoverIconProps> = ({
     <>
       <button
         onMouseEnter={canHover ? openTooltip : undefined}
+        onTouchStart={canHover ? openTooltip : undefined}
         onMouseLeave={canHover ? closeTooltip : undefined}
+        onTouchEnd={canHover ? closeTooltip : undefined}
         ref={btnRef}
         className={className}
       >
@@ -48,8 +50,8 @@ const Hoverable: React.FC<HoverIconProps> = ({
       {canHover && (
         <div
           className={
-            (tooltipShow ? '' : 'hidden ') +
-            'mt-5 border-0 block z-50 font-normal leading-normal text-sm max-w-xs break-words bg-gray-900'
+            (tooltipShow ? 'opacity-100' : 'opacity-0 hidden sm:block') +
+            ' fixed mt-5 border-0 z-50 transition-opacity font-normal leading-normal text-sm max-w-xs break-words bg-transparent'
           }
           ref={tooltipRef}
         >
