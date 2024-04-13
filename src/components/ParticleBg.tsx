@@ -3,7 +3,11 @@ import { Particles } from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import { Engine } from 'tsparticles-engine';
 
-const ParticleBg: React.FC = ({ children }) => {
+interface ParticleBgProps {
+  children: React.ReactNode;
+}
+
+const ParticleBg: React.FC<ParticleBgProps> = ({ children }) => {
   const particlesInit = async (engine: Engine) => {
     await loadFull(engine);
   };

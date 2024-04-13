@@ -1,5 +1,12 @@
-import { VerticalTimelineElementProps } from 'react-vertical-timeline-component';
+import React from 'react';
 import { MdWork, MdSchool } from 'react-icons/md';
+import { VerticalTimelineElementProps } from 'react-vertical-timeline-component';
+
+import AFTERCLASS_LOGO from '~/assets/companies/afterclass.png';
+import BOLT_LOGO from '~/assets/companies/bolt.png';
+import SEA_LOGO from '~/assets/companies/sea.png';
+import SEEDU_LOGO from '~/assets/companies/seedu.png';
+
 import {
   AWS_ICON,
   BINANCE_ICON,
@@ -27,10 +34,6 @@ import {
   WEBPACK_ICON,
   ZILLIQA_ICON,
 } from './techIcons';
-import SEA_LOGO from 'assets/companies/sea.png';
-import BOLT_LOGO from 'assets/companies/bolt.png';
-import AFTERCLASS_LOGO from 'assets/companies/afterclass.png';
-import SEEDU_LOGO from 'assets/companies/seedu.png';
 
 interface ExperienceDataProps {
   logo?: string;
@@ -218,4 +221,10 @@ const CS1101S_TA: ExperienceDataProps = {
 //   ],
 // };
 
-export const EXPERIENCES: ExperienceDataProps[] = [AFTERCLASS, SEA_LABS, SEEDU, BOLT, CS1101S_TA];
+export const EXPERIENCES: ExperienceDataProps[] = [
+  AFTERCLASS,
+  SEA_LABS,
+  SEEDU,
+  BOLT,
+  CS1101S_TA,
+];

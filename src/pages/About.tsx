@@ -1,9 +1,11 @@
-import IconList from 'components/IconList';
-import SectionBody from 'components/SectionBody';
-import SectionHeader from 'components/SectionHeader';
-import SubSectionHeader from 'components/SubSectionHeader';
 import React from 'react';
-import Section, { SectionProps } from '../components/Section';
+
+import GithubGraph from '~/components/GithubGraph';
+import IconList from '~/components/IconList';
+import Section, { SectionProps } from '~/components/Section';
+import SectionBody from '~/components/SectionBody';
+import SectionHeader from '~/components/SectionHeader';
+import SubSectionHeader from '~/components/SubSectionHeader';
 import {
   AWS_ICON,
   DOCKER_ICON,
@@ -36,8 +38,7 @@ import {
   VIM_ICON,
   VSCODE_ICON,
   WEBPACK_ICON,
-} from 'constants/techIcons';
-import GithubGraph from 'components/GithubGraph';
+} from '~/constants/techIcons';
 
 const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
   const DESCRIPTION =
@@ -91,7 +92,12 @@ const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
   ];
 
   return (
-    <Section id={id} style={style} className={`mb-10 ${className}`} nextId={nextId}>
+    <Section
+      id={id}
+      style={style}
+      className={`mb-10 ${className}`}
+      nextId={nextId}
+    >
       <SectionHeader>About Me</SectionHeader>
       <div className="px-8 space-y-7 md:px-10 lg:px-40 xl:px-60 2xl:px-80">
         <SectionBody>{DESCRIPTION}</SectionBody>

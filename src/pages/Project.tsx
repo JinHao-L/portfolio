@@ -1,7 +1,8 @@
-import ProjectCard from 'components/ProjectCard';
-import SectionHeader from 'components/SectionHeader';
-import { PROJECTS } from 'constants/projData';
 import React from 'react';
+
+import ProjectCard from '../components/ProjectCard';
+import SectionHeader from '../components/SectionHeader';
+import { PROJECTS } from '../constants/projData';
 import Section, { SectionProps } from '../components/Section';
 
 const Project: React.FC<SectionProps> = ({ id, style, className, nextId }) => {

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import AppNavBar from './components/Navbar';
-import Intro from './pages/Intro';
-import About from './pages/About';
-import Experiences from './pages/Experiences';
-import Project from './pages/Project';
-import Contact from './pages/Contact';
-import ParticleBg from 'components/ParticleBg';
-import Footer from 'components/Footer';
-import 'App.css';
-import Fab from 'components/Fab';
 import { animateScroll } from 'react-scroll';
+
+import Fab from '~/components/Fab';
+import Footer from '~/components/Footer';
+import AppNavBar from '~/components/Navbar';
+import ParticleBg from '~/components/ParticleBg';
+import About from '~/pages/About';
+import Contact from '~/pages/Contact';
+import Experiences from '~/pages/Experiences';
+import Intro from '~/pages/Intro';
+import Project from '~/pages/Project';
+import '~/App.css';
 
 const App: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -35,7 +36,9 @@ const App: React.FC = () => {
         <Contact id={'contact-section'} />
         <Fab
           className={visible ? 'inline text-gray-800' : 'hidden'}
-          onClick={() => animateScroll.scrollToTop({ duration: 500, smooth: true })}
+          onClick={() =>
+            animateScroll.scrollToTop({ duration: 500, smooth: true })
+          }
           color={'titan-white'}
         />
       </ParticleBg>

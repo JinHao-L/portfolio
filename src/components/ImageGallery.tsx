@@ -1,23 +1,24 @@
-import { ImageType } from 'constants/images';
-import React, { useState, useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 import SimpleReactLightbox, {
+  CallbackOpen,
+  Callbacks,
   SRLWrapper,
   SRLWrapperOptions,
   useLightbox,
-  Callbacks,
-  CallbackOpen,
 } from 'simple-react-lightbox';
+
+import { ImageType } from '~/constants/images';
 
 interface ImageGalleryProps {
   images: ImageType[];
   className?: string;
 }
 
-const ImageSRLOverlay: React.FC<{ images: ImageType[]; callbacks: Callbacks }> = ({
-  images,
-  callbacks,
-}) => {
+const ImageSRLOverlay: React.FC<{
+  images: ImageType[];
+  callbacks: Callbacks;
+}> = ({ images, callbacks }) => {
   const options: SRLWrapperOptions = {
     settings: {
       overlayColor: 'rgb(0, 0, 0, 0.8)',
@@ -87,14 +88,12 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, className }) => {
   );
 };
 
-const withSLR = (Component: React.FC<ImageGalleryProps>): React.FC<ImageGalleryProps> => ({
-  ...props
-}) => {
+const EnhancedImageGallery: React.FC<ImageGalleryProps> = (props) => {
   return (
     <SimpleReactLightbox>
-      <Component {...props} />
+      <ImageGallery {...props} />
     </SimpleReactLightbox>
   );
 };
 
-export default withSLR(ImageGallery);
+export default EnhancedImageGallery;

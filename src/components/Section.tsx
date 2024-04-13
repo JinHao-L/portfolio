@@ -1,5 +1,6 @@
 import React from 'react';
 import { Element } from 'react-scroll';
+
 import Divider from './Divider';
 
 export interface SectionProps {
@@ -8,6 +9,7 @@ export interface SectionProps {
   style?: React.CSSProperties;
   className?: string;
   minHeight?: string;
+  children?: React.ReactNode
 }
 
 const Section: React.FC<SectionProps> = ({

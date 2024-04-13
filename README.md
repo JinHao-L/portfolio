@@ -1,4 +1,3 @@
 # Tech Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+This tech portfolio is a personal project to showcase my experiences & technical projects. It is built using React and styled-components.

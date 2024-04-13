@@ -1,14 +1,22 @@
-import SectionHeader from 'components/SectionHeader';
 import React from 'react';
-import Section, { SectionProps } from '../components/Section';
 import { MdStar } from 'react-icons/md';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from 'react-vertical-timeline-component';
 
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import IconList from '~/components/IconList';
+import Section, { SectionProps } from '~/components/Section';
+import SectionHeader from '~/components/SectionHeader';
+import { EXPERIENCES } from '~/constants/expData';
 import 'react-vertical-timeline-component/style.min.css';
-import { EXPERIENCES } from 'constants/expData';
-import IconList from 'components/IconList';
 
-const Experiences: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
+const Experiences: React.FC<SectionProps> = ({
+  id,
+  style,
+  className,
+  nextId,
+}) => {
   return (
     <Section id={id} style={style} className={className} nextId={nextId}>
       <SectionHeader>My Experiences</SectionHeader>

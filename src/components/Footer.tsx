@@ -1,4 +1,5 @@
 import React from 'react';
+
 import SocialBar from './SocialBar';
 
 const Footer: React.FC = () => {

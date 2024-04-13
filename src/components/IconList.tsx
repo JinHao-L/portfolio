@@ -1,5 +1,7 @@
-import { TechIconType } from 'constants/techIcons';
 import React from 'react';
+
+import { TechIconType } from '~/constants/techIcons';
+
 import HoverIcon from './HoverIcon';
 
 export interface IconListProps {

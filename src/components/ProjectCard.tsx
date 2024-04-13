@@ -1,5 +1,7 @@
-import { ProjectData } from 'constants/projData';
 import React from 'react';
+
+import { ProjectData } from '~/constants/projData';
+
 import Hoverable from './Hoverable';
 import IconList from './IconList';
 import ImageGallery from './ImageGallery';
@@ -59,4 +61,3 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
 };
 
 export default ProjectCard;
-// transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110

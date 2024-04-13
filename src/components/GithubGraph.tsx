@@ -1,5 +1,6 @@
 import React from 'react';
 import GitHubCalendar from 'react-github-calendar';
+
 import SubSectionHeader from './SubSectionHeader';
 
 const GithubGraph: React.FC = () => {
