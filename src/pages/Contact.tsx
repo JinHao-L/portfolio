@@ -1,15 +1,21 @@
 import emailjs from '@emailjs/browser';
 import { Transition } from '@headlessui/react';
 import { useFormik, FormikHelpers } from 'formik';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as yup from 'yup';
 import Section, { SectionProps } from '~/components/Section';
 import SectionHeader from '~/components/SectionHeader';
 import {
+  EMAILJS_PUBLIC_KEY,
   EMAILJS_SERVICE_ID,
   EMAILJS_TEMPLATE_ID,
-  EMAILJS_USER_ID,
 } from '~/constants/variables';
+
+type FormData = {
+  name: string;
+  email: string;
+  message: string;
+}
 
 const validationSchema = yup.object({
   name: yup.string().required('Name is required'),
@@ -23,20 +29,28 @@ const validationSchema = yup.object({
 const Contact: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
   const [submitted, setSubmitted] = useState(false);
 
+  useEffect(() => {
+    emailjs.init({
+      publicKey: EMAILJS_PUBLIC_KEY,
+      blockHeadless: true,
+      limitRate: {
+        id: 'app',
+        throttle: 10000,
+      },
+    });
+  }, []);
+
+
   const handleSubmit = async (
-    formData: any,
+    formData: FormData,
     {
       setSubmitting,
       setErrors,
-    }: FormikHelpers<{
-      name: string;
-      email: string;
-      message: string;
-    }>,
+    }: FormikHelpers<FormData>,
   ) => {
     setSubmitting(true);
     return emailjs
-      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData, EMAILJS_USER_ID)
+      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData)
       .then((result) => {
         setSubmitted(true);
         setSubmitting(false);
