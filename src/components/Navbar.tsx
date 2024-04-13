@@ -2,10 +2,9 @@ import { Transition } from '@headlessui/react';
 import React, { useState } from 'react';
 import { MdMenu, MdClose } from 'react-icons/md';
 import { Link } from 'react-scroll';
+import { GITHUB_SOCIAL } from '~/constants/socials';
 
 import SocialBar from './SocialBar';
-
-import { GITHUB_SOCIAL } from '~/constants/socials';
 
 interface NavItemProps {
   to: string;

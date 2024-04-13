@@ -88,7 +88,7 @@ const MEETBALLS: ProjectData = {
     'From the meeting creation interface, agenda planner and meeting link dissemination service, to automated timekeeping and attendance taking, down to the post-mortem report, MeetBalls has you covered along every step of the process!',
   ],
   links: [
-    { title: 'Try MeetBalls here!', url: 'https://meetballsapp.com' },
+    { title: 'Try MeetBalls here!', url: 'https://meetballsapp.com', disabled: true },
     { title: 'Demo video', url: 'https://www.youtube.com/watch?v=Ru1LYvjYynk' },
     {
       title: 'STePs Showcase',
@@ -120,9 +120,12 @@ const PEERPREP: ProjectData = {
       title: 'Try PeerPrep here!',
       url: 'http://peer-prep.live',
       disabled: true,
-      disabledHint: 'Site is no longer live :(',
     },
     { title: 'Source code', url: 'https://github.com/JinHao-L/peerprep' },
+    {
+      title: 'Technical design document',
+      url: 'https://github.com/JinHao-L/peerprep/blob/main/38-FinalReport-2.pdf',
+    },
   ],
   stack: [
     NEST_ICON,
@@ -148,8 +151,13 @@ const NUSCATS: ProjectData = {
     {
       title: 'Try NUSCats here!',
       url: 'http://nuscats.herokuapp.com',
+      disabled: true,
     },
     { title: 'Source code', url: 'https://github.com/JinHao-L/nuscats' },
+    {
+      title: 'Technical design document',
+      url: 'https://github.com/JinHao-L/nuscats/blob/main/group-11-milestones.pdf',
+    },
   ],
   stack: [
     NEST_ICON,
@@ -222,8 +230,7 @@ const TEMBUFRIENDS: ProjectData = {
     { title: 'Demo video', url: 'https://www.youtube.com/watch?v=vYg_Eed1BIs' },
     {
       title: 'Documentation',
-      url:
-        'https://docs.google.com/document/d/1QqdZvL2rQxd9YPI_1KxZBTe_RL20MkOKKq330yiCV4c/edit?usp=sharing',
+      url: 'https://docs.google.com/document/d/1QqdZvL2rQxd9YPI_1KxZBTe_RL20MkOKKq330yiCV4c/edit?usp=sharing',
     },
     { title: 'Source code (Frontend)', url: 'https://github.com/JinHao-L/tembu-friends' },
     { title: 'Source code (Functions)', url: 'https://github.com/JinHao-L/tembufriends-functions' },

@@ -43,9 +43,10 @@ import {
   SiVisualstudio,
   SiWebpack,
   SiZoom,
+  SiJest,
+  SiMobx,
 } from 'react-icons/si';
 import { FcLinux } from 'react-icons/fc';
-import { IconType } from 'react-icons';
 import JavaSvg from '~/assets/logo/java.svg?react';
 import EthersSvg from '~/assets/logo/ethers.svg?react';
 import SwitcheoSvg from '~/assets/logo/swth.svg?react';
@@ -54,10 +55,11 @@ import ChromeSvg from '~/assets/logo/chrome.svg?react';
 import RxjsSvg from '~/assets/logo/rxjs.svg?react';
 import ReactQuerySvg from '~/assets/logo/react-query.svg?react';
 import JenkinsSvg from '~/assets/logo/jenkins.svg?react';
+import React from 'react';
 
 export interface TechIconType {
   name: string;
-  Icon: IconType;
+  Icon: React.FC<React.SVGAttributes<SVGElement>>;
   color?: string;
   link?: string;
 }
@@ -129,13 +131,13 @@ export const REDUX_ICON = { Icon: SiRedux, name: 'React Redux', color: '#764abc'
 export const ADOBE_XD_ICON = { Icon: SiAdobexd, name: 'Adobe XD', color: '#FE61F7' };
 export const GOOGLE_MAPS_ICON = { Icon: SiGooglemaps, name: 'Google Maps API', color: '#4285F4' };
 export const REACT_QUERY_ICON = {
-  Icon: ReactQuerySvg as IconType,
+  Icon: ReactQuerySvg,
   name: 'React Query',
   link: 'https://tanstack.com/query/v4',
 };
 
 export const ZILLIQA_ICON = {
-  Icon: ZilliqaSvg as IconType,
+  Icon: ZilliqaSvg,
   name: 'Zilliqa',
   link: 'https://github.com/Zilliqa/zilliqa-js',
 };
@@ -146,28 +148,42 @@ export const BINANCE_ICON = {
   link: 'https://github.com/bnb-chain/javascript-sdk',
 };
 export const ETHEREUM_ICON = {
-  Icon: EthersSvg as IconType,
+  Icon: EthersSvg,
   name: 'Ethers',
   link: 'https://docs.ethers.io/',
 };
 export const SWITCHEO_ICON = {
-  Icon: SwitcheoSvg as IconType,
+  Icon: SwitcheoSvg,
   name: 'Switcheo Tradehub',
   link: 'https://github.com/Switcheo/tradehub-api-js',
 };
 
 export const CHROME_ICON = {
-  Icon: ChromeSvg as IconType,
+  Icon: ChromeSvg,
   name: 'Chrome Extension',
 };
 
 export const RXJS_ICON = {
-  Icon: RxjsSvg as IconType,
+  Icon: RxjsSvg,
   name: 'RxJS',
   link: 'https://rxjs.dev/',
 };
 
 export const JENKINS_ICON = {
-  Icon: JenkinsSvg as IconType,
+  Icon: JenkinsSvg,
   name: 'Jenkins',
+};
+
+export const MOBX_ICON = {
+  Icon: SiMobx,
+  name: 'MobX',
+  color: '#FF9955',
+  link: 'https://mobx.js.org/README.html',
+};
+
+export const JEST_ICON = {
+  Icon: SiJest,
+  name: 'Jest',
+  color: '#99425B',
+  link: 'https://jestjs.io/',
 };

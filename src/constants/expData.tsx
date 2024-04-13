@@ -2,6 +2,7 @@ import React from 'react';
 import { MdWork, MdSchool } from 'react-icons/md';
 import { VerticalTimelineElementProps } from 'react-vertical-timeline-component';
 
+import OKX_LOGO from '~/assets/companies/okx.png';
 import AFTERCLASS_LOGO from '~/assets/companies/afterclass.png';
 import BOLT_LOGO from '~/assets/companies/bolt.png';
 import SEA_LOGO from '~/assets/companies/sea.png';
@@ -41,14 +42,38 @@ interface ExperienceDataProps {
   title: string;
   subtitle: string;
   content: string[];
-  links?: { url: string; name: string }[];
+  links?: { url: string; name: string; disabled?: boolean; disabledHint?: string; }[];
   stack?: TechIconType[];
 }
+
+const OKX: ExperienceDataProps = {
+  logo: OKX_LOGO,
+  props: {
+    date: 'Mar 2023 – present',
+    dateClassName: 'text-white',
+    contentStyle: { background: '#242424', color: '#fff' },
+    contentArrowStyle: { borderRight: '7px solid #242424' },
+    iconStyle: { background: '#242424', color: '#fff' },
+    icon: <MdWork />,
+  },
+  title: 'Frontend Engineer',
+  subtitle: 'OKX, Singapore',
+  content: [],
+  // links: [
+  //   {
+  //     name: 'OKX',
+  //     url: 'https://www.okx.com/',
+  //   },
+  // ],
+  // stack: [
+  //   REACT_JS_ICON,
+  // ],
+};
 
 const AFTERCLASS: ExperienceDataProps = {
   logo: AFTERCLASS_LOGO,
   props: {
-    date: 'Dec 2021 – Present',
+    date: 'Dec 2021 – Jan 2023',
     dateClassName: 'text-white',
     contentStyle: { background: '#003D7C', color: '#fff' },
     contentArrowStyle: { borderRight: '7px solid #003D7C' },
@@ -103,10 +128,14 @@ const SEA_LABS: ExperienceDataProps = {
     {
       name: 'SealCloud',
       url: 'https://sealcloud.com/',
+      disabled: true,
+      disabledHint: 'Internal Platform'
     },
     {
       name: 'Sea Hackathon',
       url: 'https://hackathon.sea.com/',
+      disabled: true,
+      disabledHint: 'Site taken down after event'
     },
   ],
   stack: [
@@ -165,11 +194,13 @@ const BOLT: ExperienceDataProps = {
   links: [
     {
       name: 'BOLT Global',
-      url: 'https://bolt.global/',
+      url: 'https://www.bolt.global/',
     },
     {
       name: 'BOLT-X Extension',
       url: 'https://chrome.google.com/webstore/detail/bolt-x/aodkkagnadcbobfpggfnjeongemjbjca',
+      disabled: true,
+      disabledHint: 'No longer maintained'
     },
     {
       name: 'Switcheo X Bolt Wallet Integration',
@@ -202,6 +233,12 @@ const CS1101S_TA: ExperienceDataProps = {
     'Facilitated weekly Studio sessions for a class of 8 Year 1 students to guide them on the basics of programming and good programming practices, thereby providing them with a smooth transition into the field of programming',
     'Followed up and keep track of the overall performance of the students and provided consultation sessions when necessary, to ensure that no students are falling behind in the module',
   ],
+  links: [
+    {
+      name: 'Source Academy',
+      url: 'https://sourceacademy.nus.edu.sg',
+    },
+  ],
 };
 
 // const ARMY: ExperienceDataProps = {
@@ -221,10 +258,4 @@ const CS1101S_TA: ExperienceDataProps = {
 //   ],
 // };
 
-export const EXPERIENCES: ExperienceDataProps[] = [
-  AFTERCLASS,
-  SEA_LABS,
-  SEEDU,
-  BOLT,
-  CS1101S_TA,
-];
+export const EXPERIENCES: ExperienceDataProps[] = [OKX, AFTERCLASS, SEA_LABS, SEEDU, BOLT, CS1101S_TA];

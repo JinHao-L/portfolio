@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TechIconType } from '~/constants/techIcons';
+import type { TechIconType } from '~/constants/techIcons';
 
 import HoverIcon from './HoverIcon';
 

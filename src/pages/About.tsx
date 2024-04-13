@@ -18,11 +18,13 @@ import {
   IONIC_ICON,
   JAVASCRIPT_ICON,
   JAVA_ICON,
+  JEST_ICON,
   JIRA_ICON,
   JUPYTER_ICON,
   K8S_ICON,
   KAFKA_ICON,
   LINUX_ICON,
+  MOBX_ICON,
   MONGO_ICON,
   NEST_ICON,
   NEXT_JS_ICON,
@@ -42,8 +44,8 @@ import {
 
 const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
   const DESCRIPTION =
-    'I am a final-year Computing undergraduate at the National University of Singapore. ' +
-    'I am currently specialising in Software Engineering and Computer Security. ' +
+    'I am a Computing Science graduate from the National University of Singapore. ' +
+    'I specialises in Software Engineering and Computer Security. ' +
     'I believe that both specialisations are important to create inclusive, secure technologies that will be used by the masses.';
 
   const SKILLS_INTRO =
@@ -64,10 +66,11 @@ const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
     TAILWINDCSS_ICON,
     GRAPHQL_ICON,
     STYLED_COMP_ICON,
+    JEST_ICON,
+    JAVA_ICON,
   ];
 
   const DABBLED = [
-    JAVA_ICON,
     GRADLE_ICON,
     EXPRESS_ICON,
     KAFKA_ICON,
@@ -75,6 +78,7 @@ const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
     MONGO_ICON,
     IONIC_ICON,
     WEBPACK_ICON,
+    MOBX_ICON
   ];
 
   const TOOLS = [
