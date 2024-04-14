@@ -78,7 +78,7 @@ const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
     MONGO_ICON,
     IONIC_ICON,
     WEBPACK_ICON,
-    MOBX_ICON
+    MOBX_ICON,
   ];
 
   const TOOLS = [
@@ -96,12 +96,7 @@ const About: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
   ];
 
   return (
-    <Section
-      id={id}
-      style={style}
-      className={`mb-10 ${className}`}
-      nextId={nextId}
-    >
+    <Section id={id} style={style} className={`mb-10 ${className}`} nextId={nextId}>
       <SectionHeader>About Me</SectionHeader>
       <div className="px-8 space-y-7 md:px-10 lg:px-40 xl:px-60 2xl:px-80">
         <SectionBody>{DESCRIPTION}</SectionBody>

@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install 🔧
-        run: yarn install --prod=false
+        run: yarn install --prod=true
 
       - name: Deploy to GH Pages
         run: |
