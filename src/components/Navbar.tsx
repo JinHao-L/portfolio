@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import { Link } from 'react-scroll';
 import { Transition } from '@headlessui/react';
+import React, { useState } from 'react';
 import { MdMenu, MdClose } from 'react-icons/md';
+import { Link } from 'react-scroll';
+import { GITHUB_SOCIAL } from '~/constants/socials';
+
 import SocialBar from './SocialBar';
-import { GITHUB_SOCIAL } from 'constants/socials';
 
 interface NavItemProps {
   to: string;
   callback?: () => any;
+  children: React.ReactNode;
 }
 
 const SCROLL_OFFSET = -80;
@@ -25,7 +27,10 @@ const NavItem: React.FC<NavItemProps> = ({ to, children, callback }) => {
       duration={DURATION}
       onClick={() => callback && setTimeout(callback, DURATION)}
     >
-      <div role="button" className="px-3 py-2 rounded-md font-small text-md hover:bg-gray-700">
+      <div
+        role="button"
+        className="px-3 py-2 rounded-md font-small text-md hover:bg-gray-700"
+      >
         {children}
       </div>
     </Link>
@@ -41,7 +46,10 @@ const Navbar: React.FC = () => {
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="py-2 text-lg text-gray-800 font-small md:hidden" role="button">
+            <div
+              className="py-2 text-lg text-gray-800 font-small md:hidden"
+              role="button"
+            >
               <Link
                 activeClass="active"
                 to={'intro-section'}
@@ -99,7 +107,10 @@ const Navbar: React.FC = () => {
         leaveFrom="transform opacity-100 scale-y-100"
         leaveTo="transform opacity-0 scale-y-95"
       >
-        <div className="absolute w-full origin-top bg-gray-100 md:hidden" id="mobile-menu">
+        <div
+          className="absolute w-full origin-top bg-gray-100 md:hidden"
+          id="mobile-menu"
+        >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <NavItem to={'intro-section'} callback={() => setIsOpen(false)}>
               Home
@@ -107,7 +118,10 @@ const Navbar: React.FC = () => {
             <NavItem to={'about-section'} callback={() => setIsOpen(false)}>
               About
             </NavItem>
-            <NavItem to={'experiences-section'} callback={() => setIsOpen(false)}>
+            <NavItem
+              to={'experiences-section'}
+              callback={() => setIsOpen(false)}
+            >
               Experiences
             </NavItem>
             <NavItem to={'projects-section'} callback={() => setIsOpen(false)}>

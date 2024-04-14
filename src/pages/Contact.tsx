@@ -1,35 +1,56 @@
-import SectionHeader from 'components/SectionHeader';
-import React, { useState } from 'react';
-import Section, { SectionProps } from '../components/Section';
-import { useFormik, FormikHelpers } from 'formik';
-import * as yup from 'yup';
 import emailjs from '@emailjs/browser';
-import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_USER_ID } from 'constants/variables';
 import { Transition } from '@headlessui/react';
+import { useFormik, FormikHelpers } from 'formik';
+import React, { useEffect, useState } from 'react';
+import * as yup from 'yup';
+import Section, { SectionProps } from '~/components/Section';
+import SectionHeader from '~/components/SectionHeader';
+import {
+  EMAILJS_PUBLIC_KEY,
+  EMAILJS_SERVICE_ID,
+  EMAILJS_TEMPLATE_ID,
+} from '~/constants/variables';
+
+type FormData = {
+  name: string;
+  email: string;
+  message: string;
+}
 
 const validationSchema = yup.object({
   name: yup.string().required('Name is required'),
-  email: yup.string().email('Please enter a valid email').required('Email is required'),
+  email: yup
+    .string()
+    .email('Please enter a valid email')
+    .required('Email is required'),
   message: yup.string().required('Message is required'),
 });
 
 const Contact: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
   const [submitted, setSubmitted] = useState(false);
 
+  useEffect(() => {
+    emailjs.init({
+      publicKey: EMAILJS_PUBLIC_KEY,
+      blockHeadless: true,
+      limitRate: {
+        id: 'app',
+        throttle: 10000,
+      },
+    });
+  }, []);
+
+
   const handleSubmit = async (
-    formData: any,
+    formData: FormData,
     {
       setSubmitting,
       setErrors,
-    }: FormikHelpers<{
-      name: string;
-      email: string;
-      message: string;
-    }>,
+    }: FormikHelpers<FormData>,
   ) => {
     setSubmitting(true);
     return emailjs
-      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData, EMAILJS_USER_ID)
+      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData)
       .then((result) => {
         setSubmitted(true);
         setSubmitting(false);
@@ -74,7 +95,9 @@ const Contact: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
               {...formik.getFieldProps('name')}
             />
             <div className="p-1 mb-2 text-sm leading-none text-red-500 ">
-              {formik?.touched?.name && formik?.errors?.name && <div>{formik.errors.name}</div>}
+              {formik?.touched?.name && formik?.errors?.name && (
+                <div>{formik.errors.name}</div>
+              )}
             </div>
 
             <label htmlFor="email">Email address</label>
@@ -86,7 +109,9 @@ const Contact: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
               {...formik.getFieldProps('email')}
             />
             <div className="p-1 mt-1 mb-2 text-sm leading-none text-red-500">
-              {formik?.touched?.email && formik?.errors?.email && <div>{formik.errors.email}</div>}
+              {formik?.touched?.email && formik?.errors?.email && (
+                <div>{formik.errors.email}</div>
+              )}
             </div>
 
             <label htmlFor="message">Message</label>
@@ -122,7 +147,7 @@ const Contact: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
                     cy="12"
                     r="10"
                     stroke="currentColor"
-                    stroke-width="4"
+                    strokeWidth="4"
                   />
                   <path
                     className="opacity-75"

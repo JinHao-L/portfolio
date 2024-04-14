@@ -1,0 +1,4 @@
+.githubGraph svg {
+  /* react-github-calendar does not allow applying style to css */
+  width: 100%;
+}

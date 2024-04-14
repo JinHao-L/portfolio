@@ -1,9 +1,10 @@
-import { render } from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import 'tailwindcss/tailwind.css';
+
 import App from './App';
 
-render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <Routes>
       <Route index element={<App />} />
@@ -11,5 +12,4 @@ render(
       <Route path="portfolio" element={<Navigate replace to="/" />} />
     </Routes>
   </BrowserRouter>,
-  document.getElementById('root'),
 );

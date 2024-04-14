@@ -1,9 +1,11 @@
-import { ProjectData } from 'constants/projData';
 import React from 'react';
-import Hoverable from './Hoverable';
+
+import { ProjectData } from '~/constants/projData';
+
 import IconList from './IconList';
 import ImageGallery from './ImageGallery';
 import SubSectionHeader from './SubSectionHeader';
+import LinkButton from './LinkButton';
 
 type ProjectCardProps = {
   data: ProjectData;
@@ -30,24 +32,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
 
         <div className="pt-4">
           {data.links?.map((link, j) => (
-            <a
+            <LinkButton
               key={`proj-${j}`}
-              {...(link.disabled
-                ? {}
-                : {
-                    target: '_blank',
-                    href: link.url,
-                    rel: 'noreferrer',
-                  })}
+              url={link.url}
+              disabled={link.disabled}
+              disabledHint={link.disabledHint}
             >
-              <Hoverable
-                hoverText={link.disabledHint || ''}
-                canHover={!!link.disabled}
-                className="px-4 py-2 mx-1 my-1 font-normal text-white bg-transparent border border-white rounded hover:bg-titan-white-500 hover:text-gray-800 hover:border-transparent"
-              >
-                {link.title}
-              </Hoverable>
-            </a>
+              {link.title}
+            </LinkButton>
           ))}
         </div>
         <div className="pt-4 space-y-3">
@@ -59,4 +51,3 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
 };
 
 export default ProjectCard;
-// transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110

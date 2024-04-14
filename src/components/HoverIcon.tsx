@@ -1,5 +1,7 @@
 import React from 'react';
-import { TechIconType } from 'constants/techIcons';
+
+import { TechIconType } from '~/constants/techIcons';
+
 import Hoverable from './Hoverable';
 
 export type HoverIconProps = { className?: string } & TechIconType;

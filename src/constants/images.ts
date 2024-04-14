@@ -1,52 +1,43 @@
-import meetBallsCover from 'assets/meetballs/cover.gif';
-import meetBallsDashboard from 'assets/meetballs/dashboard.png';
-import meetBallsMeeting from 'assets/meetballs/meeting.png';
-import meetBallsPoster from 'assets/meetballs/poster.png';
-
-import peerprepCoding from 'assets/peerprep/coding.png';
-import peerprepConfirmation from 'assets/peerprep/confirmation.png';
-import peerprepDashboard from 'assets/peerprep/dashboard.png';
-import peerprepLanding from 'assets/peerprep/landing.png';
-import peerprepStatistics from 'assets/peerprep/statistics.png';
-
-import catMap from 'assets/nuscats/map.png';
-import catProfile from 'assets/nuscats/profile.png';
-import catList from 'assets/nuscats/cat_list.png';
-import catAdmin from 'assets/nuscats/admin.png';
-import catFeeds from 'assets/nuscats/feeds.png';
-import catLanding from 'assets/nuscats/landing.png';
-import catUser from 'assets/nuscats/user_profile.png';
-
-import helloWorldChat from 'assets/helloworld/chat.png';
-import helloWorldJoin from 'assets/helloworld/joining.png';
-import helloWorldZoom from 'assets/helloworld/zoomOut.png';
-
-import nuudleUI from 'assets/nuudle/ui.png';
-import nuudleFind from 'assets/nuudle/find.png';
-import nuudleAssign from 'assets/nuudle/assign.png';
-import nuudleAdd from 'assets/nuudle/add.png';
-import nuudleRemark from 'assets/nuudle/remark.png';
-import nuudleView from 'assets/nuudle/view.png';
-
-import tembuCover from 'assets/tembufriends/cover.png';
-import tembuHome from 'assets/tembufriends/home.png';
-import tembuExplore from 'assets/tembufriends/explore.png';
-import tembuNotify from 'assets/tembufriends/notifications.png';
-import tembuMenu from 'assets/tembufriends/menu.png';
-import tembuProfile from 'assets/tembufriends/profile.png';
-import tembuAddModule from 'assets/tembufriends/add_modules.png';
-import tembuWritePost from 'assets/tembufriends/write_post.png';
-import tembuReports from 'assets/tembufriends/reports.png';
-import tembuQR from 'assets/tembufriends/qr.png';
+import helloWorldChat from '~/assets/helloworld/chat.png';
+import helloWorldJoin from '~/assets/helloworld/joining.png';
+import helloWorldZoom from '~/assets/helloworld/zoomOut.png';
+import meetBallsCover from '~/assets/meetballs/cover.gif';
+import meetBallsDashboard from '~/assets/meetballs/dashboard.png';
+import meetBallsMeeting from '~/assets/meetballs/meeting.png';
+import meetBallsPoster from '~/assets/meetballs/poster.png';
+import catAdmin from '~/assets/nuscats/admin.png';
+import catList from '~/assets/nuscats/cat_list.png';
+import catFeeds from '~/assets/nuscats/feeds.png';
+import catLanding from '~/assets/nuscats/landing.png';
+import catMap from '~/assets/nuscats/map.png';
+import catProfile from '~/assets/nuscats/profile.png';
+import catUser from '~/assets/nuscats/user_profile.png';
+import nuudleAdd from '~/assets/nuudle/add.png';
+import nuudleAssign from '~/assets/nuudle/assign.png';
+import nuudleFind from '~/assets/nuudle/find.png';
+import nuudleRemark from '~/assets/nuudle/remark.png';
+import nuudleUI from '~/assets/nuudle/ui.png';
+import nuudleView from '~/assets/nuudle/view.png';
+import peerprepCoding from '~/assets/peerprep/coding.png';
+import peerprepConfirmation from '~/assets/peerprep/confirmation.png';
+import peerprepDashboard from '~/assets/peerprep/dashboard.png';
+import peerprepLanding from '~/assets/peerprep/landing.png';
+import peerprepStatistics from '~/assets/peerprep/statistics.png';
+import tembuAddModule from '~/assets/tembufriends/add_modules.png';
+import tembuCover from '~/assets/tembufriends/cover.png';
+import tembuExplore from '~/assets/tembufriends/explore.png';
+import tembuHome from '~/assets/tembufriends/home.png';
+import tembuMenu from '~/assets/tembufriends/menu.png';
+import tembuNotify from '~/assets/tembufriends/notifications.png';
+import tembuProfile from '~/assets/tembufriends/profile.png';
+import tembuQR from '~/assets/tembufriends/qr.png';
+import tembuReports from '~/assets/tembufriends/reports.png';
+import tembuWritePost from '~/assets/tembufriends/write_post.png';
 
 export interface ImageType {
   caption: string;
   src: string;
   thumbnail?: string | undefined;
-  autoplay?: boolean | undefined;
-  width?: number | undefined;
-  height?: string | number | undefined;
-  showControls?: boolean | undefined;
 }
 
 export const IMG_MB_COVER: ImageType = {

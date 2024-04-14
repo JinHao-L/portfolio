@@ -5,6 +5,7 @@ export type HoverIconProps = {
   hoverText: string;
   className?: string;
   canHover?: boolean;
+  children: React.ReactNode;
 };
 
 const Hoverable: React.FC<HoverIconProps> = ({

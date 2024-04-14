@@ -1,16 +1,13 @@
-const defaults = require('tailwindcss/defaultTheme');
-
 module.exports = {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   purge: {
-    enabled: false,
-    content: ['./src/**/*.{js,jsx,ts,tsx}'],
+    // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
+    enabled: process.env.NODE_ENV === 'production',
+    content: ['src/**/*.ts', 'src/**/*.tsx'],
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Work Sans', ...defaults.fontFamily.sans],
-      },
       colors: {
         'titan-white': {
           DEFAULT: '#F8F8FF',

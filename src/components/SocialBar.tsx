@@ -1,5 +1,6 @@
 import React from 'react';
-import SOCIALS from 'constants/socials';
+
+import SOCIALS from '~/constants/socials';
 
 interface SocialBarProps {
   className?: string;

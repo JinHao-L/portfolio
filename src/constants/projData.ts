@@ -69,6 +69,7 @@ import {
 } from './techIcons';
 
 export interface ProjectData {
+  id: string;
   title: string;
   description: string[];
   links: {
@@ -82,13 +83,14 @@ export interface ProjectData {
 }
 
 const MEETBALLS: ProjectData = {
+  id: 'meetballs',
   title: 'MeetBalls',
   description: [
     'MeetBalls is a powerful companion app to Zoom that aims to help meeting secretaries streamline the entire meeting workflow from pre-meeting preparations to post-meeting duties.',
     'From the meeting creation interface, agenda planner and meeting link dissemination service, to automated timekeeping and attendance taking, down to the post-mortem report, MeetBalls has you covered along every step of the process!',
   ],
   links: [
-    { title: 'Try MeetBalls here!', url: 'https://meetballsapp.com' },
+    { title: 'Try MeetBalls here!', url: 'https://meetballsapp.com', disabled: true },
     { title: 'Demo video', url: 'https://www.youtube.com/watch?v=Ru1LYvjYynk' },
     {
       title: 'STePs Showcase',
@@ -109,6 +111,7 @@ const MEETBALLS: ProjectData = {
 };
 
 const PEERPREP: ProjectData = {
+  id: 'peerprep',
   title: 'PeerPrep',
   description: [
     'PeerPrep is a live collaborative coding platform where students can match with a partner and practise for their coding interviews by solving Leetcode questions.',
@@ -120,9 +123,12 @@ const PEERPREP: ProjectData = {
       title: 'Try PeerPrep here!',
       url: 'http://peer-prep.live',
       disabled: true,
-      disabledHint: 'Site is no longer live :(',
     },
     { title: 'Source code', url: 'https://github.com/JinHao-L/peerprep' },
+    {
+      title: 'Technical design document',
+      url: 'https://github.com/JinHao-L/peerprep/blob/main/38-FinalReport-2.pdf',
+    },
   ],
   stack: [
     NEST_ICON,
@@ -139,6 +145,7 @@ const PEERPREP: ProjectData = {
 };
 
 const NUSCATS: ProjectData = {
+  id: 'nuscats',
   title: 'NUSCats',
   description: [
     "NUSCats is a progressive web app that helps NUS CatCafe members crowd-source for locations of cats in NUS. The aim of the app is to make feeding more efficient, by providing the cats' last-seen locations.",
@@ -148,8 +155,13 @@ const NUSCATS: ProjectData = {
     {
       title: 'Try NUSCats here!',
       url: 'http://nuscats.herokuapp.com',
+      disabled: true,
     },
     { title: 'Source code', url: 'https://github.com/JinHao-L/nuscats' },
+    {
+      title: 'Technical design document',
+      url: 'https://github.com/JinHao-L/nuscats/blob/main/group-11-milestones.pdf',
+    },
   ],
   stack: [
     NEST_ICON,
@@ -174,6 +186,7 @@ const NUSCATS: ProjectData = {
 };
 
 const HELLOWORLD: ProjectData = {
+  id: 'helloworld',
   title: 'HelloWorld',
   description: [
     'HelloWorld is a real-time chat based application built for connecting users around the globe. This project was inspired due to the frustration and ongoing boredom peopleface during the COVID-19 pandemic. The application comes with an interactive map display for users to view and connect with users via a real-time chat interface.',
@@ -192,6 +205,7 @@ const HELLOWORLD: ProjectData = {
 };
 
 const NUUDLE: ProjectData = {
+  id: 'nuudle',
   title: 'Nuudle',
   description: [
     'Nuudle is a desktop application that empowers clinic nurses, allowing them to handle patients’ appointments quickly and efficiently. While it has a GUI, most of the user interactions happen using a CLI (Command Line Interface).',
@@ -209,6 +223,7 @@ const NUUDLE: ProjectData = {
 };
 
 const TEMBUFRIENDS: ProjectData = {
+  id: 'tembufriends',
   title: 'TembuFriends',
   description: [
     'TembuFriends is a social networking mobile application for Tembusu residents. It provides a platform for students to connect and share their knowledge. This app is built using React Native framework on Expo and Firebase as our backend server and database.',
@@ -222,8 +237,7 @@ const TEMBUFRIENDS: ProjectData = {
     { title: 'Demo video', url: 'https://www.youtube.com/watch?v=vYg_Eed1BIs' },
     {
       title: 'Documentation',
-      url:
-        'https://docs.google.com/document/d/1QqdZvL2rQxd9YPI_1KxZBTe_RL20MkOKKq330yiCV4c/edit?usp=sharing',
+      url: 'https://docs.google.com/document/d/1QqdZvL2rQxd9YPI_1KxZBTe_RL20MkOKKq330yiCV4c/edit?usp=sharing',
     },
     { title: 'Source code (Frontend)', url: 'https://github.com/JinHao-L/tembu-friends' },
     { title: 'Source code (Functions)', url: 'https://github.com/JinHao-L/tembufriends-functions' },
