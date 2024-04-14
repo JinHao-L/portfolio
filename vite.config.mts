@@ -34,7 +34,7 @@ export default defineConfig({
           if (/yup|formik/.test(id)) return 'form';
           if (/calendar|date-fns|chroma-js/.test(id)) return 'calendar';
           if (/react-router-dom|@remix-run|react-router/.test(id)) {
-            return '@react-router';
+            return 'react-router';
           }
         },
       },

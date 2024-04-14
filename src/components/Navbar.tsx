@@ -100,12 +100,12 @@ const Navbar: React.FC = () => {
 
       <Transition
         show={isOpen}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-y-95"
-        enterTo="transform opacity-100 scale-y-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-y-100"
-        leaveTo="transform opacity-0 scale-y-95"
+        enter="transition-[transform,opacity] ease duration-200"
+        enterFrom="opacity-0 scale-y-0"
+        enterTo="opacity-100 scale-y-100"
+        leave="transition-[transform,opacity] ease duration-200"
+        leaveFrom="opacity-100 scale-y-100"
+        leaveTo="opacity-0 scale-y-0"
       >
         <div
           className="absolute w-full origin-top bg-gray-100 md:hidden"

@@ -1,11 +1,7 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  purge: {
-    // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
-    enabled: process.env.NODE_ENV === 'production',
-    content: ['src/**/*.ts', 'src/**/*.tsx'],
-  },
-  darkMode: false, // or 'media' or 'class'
+  content: ['src/**/*.ts', 'src/**/*.tsx'],
   theme: {
     extend: {
       colors: {
@@ -52,10 +48,6 @@ module.exports = {
         wave: 'wave 1.5s infinite',
       },
     },
-  },
-  variants: {
-    opacity: ({ after }) => after(['disabled']),
-    backgroundColor: ({ after }) => after(['disabled']),
   },
   plugins: [],
 };

@@ -170,7 +170,7 @@ const Contact: React.FC<SectionProps> = ({ id, style, className, nextId }) => {
             >
               <div
                 className={
-                  'p-4 rounded-b-xl w-full text-center bg-yellow-400 bg-opacity-30 border-2 border-t-0 border-yellow-400 border-opacity-50'
+                  'p-4 rounded-b-xl w-full text-center bg-yellow-400/30 border-2 border-t-0 border-yellow-400 border-opacity-50'
                 }
               >
                 Email sent successfully! Thank you for your feedback!
