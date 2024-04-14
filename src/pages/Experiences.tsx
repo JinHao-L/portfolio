@@ -17,39 +17,40 @@ const Experiences: React.FC<SectionProps> = ({ id, style, className, nextId }) =
         {EXPERIENCES.map((item, idx) => (
           <VerticalTimelineElement {...item.props} key={`exp-${idx}`}>
             <>
-            {item.logo && (
-              <img
-                src={item.logo}
-                className="absolute right-0 hidden h-12 mr-5 sm:block"
-                alt={`${item.subtitle} logo`}
-              />
-            )}
-            <h3 className="font-semibold text-md">{item.title}</h3>
-            <h4 className="pb-3 italic">{item.subtitle}</h4>
-            <ul className="pl-4 space-y-2 font-normal text-justify list-disc">
-              {item.content?.map((item, pt) => <li key={`exp-${idx}-${pt}`}>{item}</li>)}
-            </ul>
+              {item.logo && (
+                <img
+                  src={item.logo}
+                  className="absolute right-0 hidden h-12 mr-5 sm:block"
+                  alt={`${item.subtitle} logo`}
+                />
+              )}
+              <h3 className="font-semibold text-md">{item.title}</h3>
+              <h4 className="pb-3 italic">{item.subtitle}</h4>
+              <ul className="pl-4 space-y-2 font-normal text-justify list-disc">
+                {item.content?.map((item, pt) => <li key={`exp-${idx}-${pt}`}>{item}</li>)}
+              </ul>
 
-            {item.links && (
-              <div className="pt-4">
-                {item.links?.map((link, j) => (
-                  <LinkButton
-                    key={`exp-${idx}=${j}`}
-                    url={link.url}
-                    disabled={link.disabled}
-                    disabledHint={link.disabledHint}
-                  >
-                    {link.name}
-                  </LinkButton>
-                ))}
-              </div>
-            )}
+              {item.links && (
+                <div className="pt-4">
+                  {item.links?.map((link, j) => (
+                    <LinkButton
+                      key={`exp-${idx}=${j}`}
+                      url={link.url}
+                      disabled={link.disabled}
+                      disabledHint={link.disabledHint}
+                    >
+                      {link.name}
+                    </LinkButton>
+                  ))}
+                </div>
+              )}
 
-            {item.stack && (
-              <div className="my-2">
-                <IconList icons={item.stack} iconClassName={'w-14 h-14'} />
-              </div>
-            )}</>
+              {item.stack && (
+                <div className="my-2">
+                  <IconList icons={item.stack} iconClassName={'w-14 h-14'} />
+                </div>
+              )}
+            </>
           </VerticalTimelineElement>
         ))}
         <VerticalTimelineElement
