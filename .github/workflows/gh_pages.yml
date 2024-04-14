@@ -36,6 +36,7 @@ jobs:
           git remote set-url origin https://git:${DEPLOY_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           bunx gh-pages -d dist --cname ${CNAME}
         env:
+          CNAME: ${{ vars.CNAME }}
           DEPLOY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VITE_APP_EMAILJS_SVC_ID: ${{ secrets.VITE_APP_EMAILJS_SVC_ID }}
           VITE_APP_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_APP_EMAILJS_PUBLIC_KEY }}
