@@ -2,7 +2,6 @@ import React from 'react';
 
 import { ProjectData } from '~/constants/projData';
 
-import Hoverable from './Hoverable';
 import IconList from './IconList';
 import ImageGallery from './ImageGallery';
 import SubSectionHeader from './SubSectionHeader';

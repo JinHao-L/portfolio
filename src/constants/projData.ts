@@ -69,6 +69,7 @@ import {
 } from './techIcons';
 
 export interface ProjectData {
+  id: string;
   title: string;
   description: string[];
   links: {
@@ -82,6 +83,7 @@ export interface ProjectData {
 }
 
 const MEETBALLS: ProjectData = {
+  id: 'meetballs',
   title: 'MeetBalls',
   description: [
     'MeetBalls is a powerful companion app to Zoom that aims to help meeting secretaries streamline the entire meeting workflow from pre-meeting preparations to post-meeting duties.',
@@ -109,6 +111,7 @@ const MEETBALLS: ProjectData = {
 };
 
 const PEERPREP: ProjectData = {
+  id: 'peerprep',
   title: 'PeerPrep',
   description: [
     'PeerPrep is a live collaborative coding platform where students can match with a partner and practise for their coding interviews by solving Leetcode questions.',
@@ -142,6 +145,7 @@ const PEERPREP: ProjectData = {
 };
 
 const NUSCATS: ProjectData = {
+  id: 'nuscats',
   title: 'NUSCats',
   description: [
     "NUSCats is a progressive web app that helps NUS CatCafe members crowd-source for locations of cats in NUS. The aim of the app is to make feeding more efficient, by providing the cats' last-seen locations.",
@@ -182,6 +186,7 @@ const NUSCATS: ProjectData = {
 };
 
 const HELLOWORLD: ProjectData = {
+  id: 'helloworld',
   title: 'HelloWorld',
   description: [
     'HelloWorld is a real-time chat based application built for connecting users around the globe. This project was inspired due to the frustration and ongoing boredom peopleface during the COVID-19 pandemic. The application comes with an interactive map display for users to view and connect with users via a real-time chat interface.',
@@ -200,6 +205,7 @@ const HELLOWORLD: ProjectData = {
 };
 
 const NUUDLE: ProjectData = {
+  id: 'nuudle',
   title: 'Nuudle',
   description: [
     'Nuudle is a desktop application that empowers clinic nurses, allowing them to handle patients’ appointments quickly and efficiently. While it has a GUI, most of the user interactions happen using a CLI (Command Line Interface).',
@@ -217,6 +223,7 @@ const NUUDLE: ProjectData = {
 };
 
 const TEMBUFRIENDS: ProjectData = {
+  id: 'tembufriends',
   title: 'TembuFriends',
   description: [
     'TembuFriends is a social networking mobile application for Tembusu residents. It provides a platform for students to connect and share their knowledge. This app is built using React Native framework on Expo and Firebase as our backend server and database.',

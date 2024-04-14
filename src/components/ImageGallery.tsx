@@ -1,65 +1,79 @@
-import React, { useMemo, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
-import SimpleReactLightbox, {
-  CallbackOpen,
-  Callbacks,
-  SRLWrapper,
-  SRLWrapperOptions,
-  useLightbox,
-} from 'simple-react-lightbox';
+import Lightbox from 'yet-another-react-lightbox';
+import {
+  Thumbnails,
+  Captions,
+  Counter,
+  Fullscreen,
+  Zoom,
+} from 'yet-another-react-lightbox/plugins';
 
-import { ImageType } from '~/constants/images';
+import type { ImageType } from '~/constants/images';
+
+import type { CaptionsRef, ThumbnailsRef } from 'yet-another-react-lightbox';
+
+import 'yet-another-react-lightbox/styles.css';
+import 'yet-another-react-lightbox/plugins/captions.css';
+import 'yet-another-react-lightbox/plugins/counter.css';
+import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
 interface ImageGalleryProps {
   images: ImageType[];
   className?: string;
 }
 
-const ImageSRLOverlay: React.FC<{
-  images: ImageType[];
-  callbacks: Callbacks;
-}> = ({ images, callbacks }) => {
-  const options: SRLWrapperOptions = {
-    settings: {
-      overlayColor: 'rgb(0, 0, 0, 0.8)',
-      disablePanzoom: true,
-      slideAnimationType: 'both',
-    },
-    buttons: {
-      backgroundColor: 'rgba(30,30,36,0.8)',
-      iconColor: 'rgba(255, 255, 255, 0.8)',
-      showAutoplayButton: false,
-      showCloseButton: true,
-      showDownloadButton: false,
-      showFullscreenButton: true,
-      showNextButton: true,
-      showPrevButton: true,
-      showThumbnailsButton: true,
-    },
-    thumbnails: {
-      showThumbnails: true,
-    },
-  };
-
-  return <SRLWrapper options={options} elements={images} callbacks={callbacks} />;
-};
-
 const ImageGallery: React.FC<ImageGalleryProps> = ({ images, className }) => {
   const [currentImg, setCurrentImg] = useState(0);
-  const { openLightbox } = useLightbox();
+  const [isLightBoxOpen, setIsLightBoxOpen] = useState(false);
 
-  const callbacks: Callbacks = useMemo(
-    () => ({
-      onLightboxClosed: ({ currentSlide }: CallbackOpen) => setCurrentImg(+currentSlide.id),
-    }),
-    [],
-  );
+  const thumbnailsRef = useRef<ThumbnailsRef>(null);
+  const captionsRef = useRef<CaptionsRef>(null);
 
-  const canCycle = useMemo(() => images.length > 1, [images]);
+  const canCycle = images.length > 1;
 
   return (
     <div className="self-center">
-      <ImageSRLOverlay images={images} callbacks={callbacks} />
+      <Lightbox
+        styles={{
+          container: { backgroundColor: 'rgba(0, 0, 0, .8)' },
+          thumbnailsContainer: { backgroundColor: 'rgba(0, 0, 0, .9)' },
+          thumbnail: { backgroundColor: 'transparent' },
+        }}
+        plugins={[Captions, Counter, Fullscreen, Thumbnails, Zoom]}
+        open={isLightBoxOpen}
+        close={() => setIsLightBoxOpen(false)}
+        index={currentImg}
+        slides={images.map((image) => ({
+          type: 'image',
+          src: image.src,
+          alt: image.caption,
+          caption: image.caption,
+          description: image.caption,
+        }))}
+        captions={{ ref: captionsRef }}
+        carousel={{
+          finite: false,
+          imageFit: 'contain',
+        }}
+        controller={{
+          closeOnPullUp: true,
+          closeOnBackdropClick: true,
+        }}
+        thumbnails={{
+          ref: thumbnailsRef,
+          vignette: true,
+          border: 0,
+          borderRadius: 0,
+          showToggle: true,
+        }}
+        on={{
+          view: ({ index }) => setCurrentImg(index),
+          entering: () => {
+            thumbnailsRef.current?.hide?.();
+          },
+        }}
+      />
       <div className={`relative flex justify-center`}>
         <button
           style={{ display: canCycle ? 'grid' : 'none' }}
@@ -68,7 +82,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, className }) => {
         >
           {<MdNavigateBefore size={25} className="text-blue-900" />}
         </button>
-        <button onClick={() => openLightbox(currentImg)}>
+        <button onClick={() => setIsLightBoxOpen(true)}>
           <img
             src={images[currentImg].src}
             alt={images[currentImg].caption}
@@ -88,12 +102,4 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images, className }) => {
   );
 };
 
-const EnhancedImageGallery: React.FC<ImageGalleryProps> = (props) => {
-  return (
-    <SimpleReactLightbox>
-      <ImageGallery {...props} />
-    </SimpleReactLightbox>
-  );
-};
-
-export default EnhancedImageGallery;
+export default ImageGallery;

@@ -38,10 +38,6 @@ export interface ImageType {
   caption: string;
   src: string;
   thumbnail?: string | undefined;
-  autoplay?: boolean | undefined;
-  width?: number | undefined;
-  height?: string | number | undefined;
-  showControls?: boolean | undefined;
 }
 
 export const IMG_MB_COVER: ImageType = {
@@ -144,8 +140,7 @@ export const IMG_HW_ZOOM: ImageType = {
 };
 
 export const IMG_NDL_UI: ImageType = {
-  caption:
-    'A clinic management desktop app to manage patient records and clinical appointments',
+  caption: 'A clinic management desktop app to manage patient records and clinical appointments',
   src: nuudleUI,
   thumbnail: nuudleUI,
 };
